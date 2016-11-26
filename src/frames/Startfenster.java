@@ -19,10 +19,12 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Toolkit;
+import javax.swing.JTextField;
 
 public class Startfenster extends JFrame
 {
-	private JPanel contentPane;
+	private JPanel cpWillkommen;
+	private JTextField txtBitteHierIhren;
 
 	/**
 	 * Launch the application.
@@ -60,22 +62,22 @@ public class Startfenster extends JFrame
 		setTitle("Willkommen");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1100, 700);
-		contentPane = new JPanel();
-		contentPane.setBackground(Color.DARK_GRAY);
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(new MigLayout("", "[182px][grow][165px][364px,grow][166px][181px]", "[grow][137px][grow][286px][grow][29px]"));
+		cpWillkommen = new JPanel();
+		cpWillkommen.setBackground(Color.DARK_GRAY);
+		cpWillkommen.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(cpWillkommen);
+		cpWillkommen.setLayout(new MigLayout("", "[182px][grow][165px][364px,grow][166px][181px]", "[grow][137px][grow][286px][grow][29px]"));
 		
-		JPanel panel = new JPanel();
-		panel.setForeground(new Color(138, 43, 226));
-		panel.setBackground(new Color(255, 215, 0));
-		contentPane.add(panel, "cell 3 1,grow");
-		GridBagLayout gbl_panel = new GridBagLayout();
-		gbl_panel.columnWidths = new int[]{109, 0, 99, 0};
-		gbl_panel.rowHeights = new int[]{27, 0, 0, 0, 0};
-		gbl_panel.columnWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		panel.setLayout(gbl_panel);
+		JPanel pWillkommen = new JPanel();
+		pWillkommen.setForeground(new Color(138, 43, 226));
+		pWillkommen.setBackground(new Color(255, 215, 0));
+		cpWillkommen.add(pWillkommen, "cell 3 1,grow");
+		GridBagLayout gbl_pWillkommen = new GridBagLayout();
+		gbl_pWillkommen.columnWidths = new int[]{109, 0, 99, 0};
+		gbl_pWillkommen.rowHeights = new int[]{27, 0, 0, 0, 0};
+		gbl_pWillkommen.columnWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_pWillkommen.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		pWillkommen.setLayout(gbl_pWillkommen);
 		
 		JLabel lblWillkommen = new JLabel("Willkommen bei");
 		lblWillkommen.setForeground(new Color(138, 43, 226));
@@ -85,7 +87,7 @@ public class Startfenster extends JFrame
 		gbc_lblWillkommen.insets = new Insets(0, 0, 5, 5);
 		gbc_lblWillkommen.gridx = 1;
 		gbc_lblWillkommen.gridy = 1;
-		panel.add(lblWillkommen, gbc_lblWillkommen);
+		pWillkommen.add(lblWillkommen, gbc_lblWillkommen);
 		
 		JLabel lblNewLabel = new JLabel("Break-Out");
 		lblNewLabel.setFont(new Font("Tempus Sans ITC", Font.BOLD, 30));
@@ -95,11 +97,17 @@ public class Startfenster extends JFrame
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel.gridx = 1;
 		gbc_lblNewLabel.gridy = 2;
-		panel.add(lblNewLabel, gbc_lblNewLabel);
+		pWillkommen.add(lblNewLabel, gbc_lblNewLabel);
+		
+		txtBitteHierIhren = new JTextField();
+		txtBitteHierIhren.setToolTipText("Bitte gebeb Sie hier Ihren Spielernamen ein!");
+		txtBitteHierIhren.setText("Bitte hier Ihren Spielername eingeben");
+		cpWillkommen.add(txtBitteHierIhren, "cell 3 2,growx");
+		txtBitteHierIhren.setColumns(10);
 		
 		JPanel pAnleitung = new JPanel();
 		pAnleitung.setBackground(new Color(138, 43, 226));
-		contentPane.add(pAnleitung, "cell 0 3 6 1,grow");
+		cpWillkommen.add(pAnleitung, "cell 0 3 6 1,grow");
 		GridBagLayout gbl_pAnleitung = new GridBagLayout();
 		gbl_pAnleitung.columnWidths = new int[]{1058, 0};
 		gbl_pAnleitung.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
@@ -194,10 +202,10 @@ public class Startfenster extends JFrame
 		
 		JButton btnSpielStarten = new JButton("Spiel starten");
 		btnSpielStarten.setFont(new Font("Tempus Sans ITC", Font.BOLD, 15));
-		contentPane.add(btnSpielStarten, "cell 0 5,alignx center,aligny center");
+		cpWillkommen.add(btnSpielStarten, "cell 0 5,alignx center,aligny center");
 		
 		JButton btnHighscore = new JButton("Highscore\u00B4s");
 		btnHighscore.setFont(new Font("Tempus Sans ITC", Font.BOLD, 15));
-		contentPane.add(btnHighscore, "cell 5 5,alignx center,aligny center");
+		cpWillkommen.add(btnHighscore, "cell 5 5,alignx center,aligny center");
 	}
 }
