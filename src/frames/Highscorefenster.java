@@ -1,44 +1,23 @@
 package frames;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import java.awt.Font;
-import java.awt.Toolkit;
 
-public class Highscorefenster extends JFrame
+import interfaces.IFarben;
+import interfaces.IFensterEigenschaften;
+import interfaces.ISchriften;
+
+public class Highscorefenster extends JFrame implements IFensterEigenschaften, IFarben, ISchriften
 {
+	private JLabel lblHigesore;
 	private JPanel cpHighsore;
 	private JPanel pHighsore;
-	private JLabel lblHigesore;
 	private JPanel pHighsoreAusgabe;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args)
-	{
-		EventQueue.invokeLater(new Runnable()
-		{
-			public void run()
-			{
-				try
-				{
-					Highscorefenster frame = new Highscorefenster();
-					frame.setVisible(true);
-				}
-				catch (Exception e)
-				{
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -50,29 +29,33 @@ public class Highscorefenster extends JFrame
 	
 	private void initialize()
 	{
+		setVisible(true);
 		setResizable(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Highscorefenster.class.getResource("/images/Logo.jpg")));
-		
-		setTitle("Higesore`s");
+		setIconImage(FENSTER_SYMBOL);
+		setTitle("Highscore\u00B4s");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1100, 700);
+		setSize(FENSTER_BREITE, FENSTER_HOEHE);
+		setMinimumSize(MINIMALE_GROESSE);
+		setMaximumSize(MAXIMALE_GROESSE);
+		setLocation(FENSTER_POSITION);
+		
 		cpHighsore = new JPanel();
-		cpHighsore.setBackground(Color.DARK_GRAY);
+		cpHighsore.setBackground(GUI_HINTERGRUND);
 		cpHighsore.setBorder(new EmptyBorder(5, 5, 5, 5));
 		cpHighsore.setLayout(new BorderLayout(0, 0));
 		setContentPane(cpHighsore);
-		
+
 		pHighsore = new JPanel();
-		pHighsore.setBackground(new Color(138, 43, 226));
+		pHighsore.setBackground(VIOLETT);
 		cpHighsore.add(pHighsore, BorderLayout.NORTH);
-		
+
 		lblHigesore = new JLabel("Highesore\u00B4s");
-		lblHigesore.setFont(new Font("Tempus Sans ITC", Font.BOLD, 30));
-		lblHigesore.setForeground(new Color(255, 240, 245));
+		lblHigesore.setFont(SCHRIFT_GROSS_FETT);
+		lblHigesore.setForeground(HELL_GRAU);
 		pHighsore.add(lblHigesore);
-		
+
 		pHighsoreAusgabe = new JPanel();
-		pHighsoreAusgabe.setBackground(Color.DARK_GRAY);
+		pHighsoreAusgabe.setBackground(GUI_HINTERGRUND);
 		cpHighsore.add(pHighsoreAusgabe, BorderLayout.CENTER);
 	}
 }
