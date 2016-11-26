@@ -48,7 +48,9 @@ public class Hauptfenster extends JFrame {
 
 	private void initialize()
 	{
+
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\glant\\Desktop\\Logo.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Hauptfenster.class.getResource("/images/Logo.jpg")));
 		setTitle("Break-Out");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1100, 700);
