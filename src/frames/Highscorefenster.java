@@ -41,7 +41,8 @@ public class Highscorefenster extends JFrame {
 		initialize();
 	}
 	private void initialize() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\glant\\Desktop\\Logo.jpg"));
+		setResizable(false);
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Highscorefenster.class.getResource("/images/Logo.jpg")));
 		
 				setTitle("Higesore`s");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

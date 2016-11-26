@@ -47,7 +47,8 @@ public class Startfenster extends JFrame {
 		initialize();
 	}
 	private void initialize() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\glant\\Desktop\\Logo.jpg"));
+		setResizable(false);
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Startfenster.class.getResource("/images/Logo.jpg")));
 		setTitle("Willkommen");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1100, 700);
