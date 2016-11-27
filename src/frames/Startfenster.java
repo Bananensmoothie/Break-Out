@@ -17,8 +17,6 @@ import interfaces.IFarben;
 import interfaces.IFensterEigenschaften;
 import interfaces.ISchriften;
 import net.miginfocom.swing.MigLayout;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class Startfenster extends JFrame implements IFensterEigenschaften, IFarben, ISchriften
 {
