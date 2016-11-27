@@ -18,6 +18,24 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 	private JPanel cpHighsore;
 	private JPanel pHighsore;
 	private JPanel pHighsoreAusgabe;
+	
+	public static void main(String[] args)
+	{
+		EventQueue.invokeLater(new Runnable()
+		{
+			public void run()
+			{
+				try
+				{
+					new Highscorefenster();
+				}
+				catch (Exception e)
+				{
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	/**
 	 * Create the frame.

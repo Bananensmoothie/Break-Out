@@ -74,6 +74,24 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 	private JPanel pBall;
 	private JPanel pBenutzerebene;
 
+	public static void main(String[] args)
+	{
+		EventQueue.invokeLater(new Runnable()
+		{
+			public void run()
+			{
+				try
+				{
+					new Hauptfenster();
+				}
+				catch (Exception e)
+				{
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
 	/**
 	 * Create the frame.
 	 */
