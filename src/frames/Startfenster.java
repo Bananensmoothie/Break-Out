@@ -16,14 +16,21 @@ import javax.swing.border.EmptyBorder;
 import interfaces.IFarben;
 import interfaces.IFensterEigenschaften;
 import interfaces.ISchriften;
+import listeners.ButtonListener;
+import listeners.TextfieldListener;
+import listeners.WindowListener;
 import net.miginfocom.swing.MigLayout;
 
 public class Startfenster extends JFrame implements IFensterEigenschaften, IFarben, ISchriften
 {
+	private static String spielername;
+	private static JTextField txtSpielername;
+	private static JButton btnSpielStarten;
+	private static JButton btnHighscore;
+	
 	private JPanel cpWillkommen;
 	private JPanel pWillkommen;
 	private JPanel pAnleitung;
-	private JTextField txtSpielername;
 	private JLabel lblZielDesSpiels1;
 	private JLabel lblZielDesSpiels2;
 	private JLabel lblZielDesSpiels3;
@@ -35,8 +42,6 @@ public class Startfenster extends JFrame implements IFensterEigenschaften, IFarb
 	private JLabel lblInformationenZuBreakout;
 	private JLabel lblWillkommenBei;
 	private JLabel lblBreakOut;
-	private JButton btnSpielStarten;
-	private JButton btnHighscore;
 
 	/**
 	 * Launch the application.
@@ -69,11 +74,12 @@ public class Startfenster extends JFrame implements IFensterEigenschaften, IFarb
 	
 	private void initialize()
 	{
+		addWindowListener(new WindowListener(this));
 		setVisible(true);
 		setResizable(false);
 		setIconImage(FENSTER_SYMBOL);
 		setTitle("Willkommen");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setSize(FENSTER_BREITE, FENSTER_HOEHE);
 		setMinimumSize(MINIMALE_GROESSE);
 		setMaximumSize(MAXIMALE_GROESSE);
@@ -118,9 +124,11 @@ public class Startfenster extends JFrame implements IFensterEigenschaften, IFarb
 		pWillkommen.add(lblBreakOut, gbc_lblNewLabel);
 
 		txtSpielername = new JTextField("Bitte hier Ihren Spielername eingeben");
+		txtSpielername.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		txtSpielername.setToolTipText("Bitte geben Sie hier Ihren Spielernamen ein\u0021");
+		txtSpielername.addKeyListener(new TextfieldListener(this, txtSpielername));
+		txtSpielername.addFocusListener(new TextfieldListener(this, txtSpielername));
 		cpWillkommen.add(txtSpielername, "cell 3 2,growx");
-		txtSpielername.setColumns(10);
 
 		pAnleitung = new JPanel();
 		pAnleitung.setBackground(VIOLETT);
@@ -225,10 +233,47 @@ public class Startfenster extends JFrame implements IFensterEigenschaften, IFarb
 
 		btnSpielStarten = new JButton("Spiel starten");
 		btnSpielStarten.setFont(SCHRIFT_NORMAL_FETT);
+		btnSpielStarten.setEnabled(false);
+		btnSpielStarten.addActionListener(new ButtonListener(this, ButtonListener.START_GAME));
 		cpWillkommen.add(btnSpielStarten, "cell 0 5,alignx center,aligny center");
 
 		btnHighscore = new JButton("Highscore\u00B4s");
 		btnHighscore.setFont(SCHRIFT_NORMAL_FETT);
+		btnHighscore.addActionListener(new ButtonListener(this, ButtonListener.SHOW_HIGHSCORES));
 		cpWillkommen.add(btnHighscore, "cell 5 5,alignx center,aligny center");
+	}
+
+	public static String getSpielername()
+	{
+		return spielername;
+	}
+
+	public static void setSpielername(String spielername)
+	{
+		Startfenster.spielername = spielername;
+	}
+
+	/**
+	 * @return the txtSpielername
+	 */
+	public static JTextField getTxtSpielername()
+	{
+		return txtSpielername;
+	}
+
+	/**
+	 * @return the btnSpielStarten
+	 */
+	public static JButton getBtnSpielStarten()
+	{
+		return btnSpielStarten;
+	}
+
+	/**
+	 * @return the btnHighscore
+	 */
+	public static JButton getBtnHighscore()
+	{
+		return btnHighscore;
 	}
 }

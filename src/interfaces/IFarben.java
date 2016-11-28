@@ -2,6 +2,10 @@ package interfaces;
 
 import java.awt.Color;
 
+/**
+ * @author Manuel Glantschnig
+ * @version 1.0
+ */
 public interface IFarben
 {
 	Color GUI_HINTERGRUND = Color.DARK_GRAY;

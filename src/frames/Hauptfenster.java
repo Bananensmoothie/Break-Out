@@ -1,7 +1,5 @@
 package frames;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -10,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 import interfaces.IFarben;
 import interfaces.IFensterEigenschaften;
 import interfaces.ISchriften;
+import listeners.WindowListener;
 import net.miginfocom.swing.MigLayout;
 
 public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarben, ISchriften
@@ -73,24 +72,6 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 	private JPanel pBlau1_10;
 	private JPanel pBall;
 	private JPanel pBenutzerebene;
-
-	public static void main(String[] args)
-	{
-		EventQueue.invokeLater(new Runnable()
-		{
-			public void run()
-			{
-				try
-				{
-					new Hauptfenster();
-				}
-				catch (Exception e)
-				{
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 	
 	/**
 	 * Create the frame.
@@ -102,10 +83,11 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 
 	private void initialize()
 	{
+		addWindowListener(new WindowListener(this));
 		setVisible(true);
 		setIconImage(FENSTER_SYMBOL);
 		setTitle("Break\u002DOut");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setSize(FENSTER_BREITE, FENSTER_HOEHE);
 		setMinimumSize(MINIMALE_GROESSE);
 		setMaximumSize(MAXIMALE_GROESSE);

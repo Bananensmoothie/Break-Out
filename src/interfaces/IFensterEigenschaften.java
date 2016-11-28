@@ -7,10 +7,14 @@ import java.awt.Toolkit;
 
 import frames.Startfenster;
 
+/**
+ * @author Manuel Glantschnig
+ * @version 1.0
+ */
 public interface IFensterEigenschaften
 {
 	int FENSTER_BREITE = 1100;
-	int FENSTER_HOEHE = 700;
+	int FENSTER_HOEHE = 710;
 	int MIN_BREITE = 500;
 	int MIN_HOEHE = 600;
 	int MAX_BREITE = 3440;
