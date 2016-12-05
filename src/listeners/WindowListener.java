@@ -44,5 +44,10 @@ public class WindowListener extends WindowAdapter
 		{
 			System.exit(0);
 		}
+		
+		else
+		{
+			return;
+		}
 	}
 }

@@ -94,11 +94,11 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 
 	private void initialize()
 	{
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		addWindowListener(new WindowListener(this));
 		setVisible(true);
 		setIconImage(FENSTER_SYMBOL);
 		setTitle("Break\u002DOut");
-		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setSize(FENSTER_BREITE, FENSTER_HOEHE);
 		setMinimumSize(MINIMALE_GROESSE);
 		setMaximumSize(MAXIMALE_GROESSE);

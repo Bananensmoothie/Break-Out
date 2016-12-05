@@ -63,12 +63,12 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 	
 	private void initialize()
 	{
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		addWindowListener(new WindowListener(this));
 		setVisible(true);
 		setResizable(false);
 		setIconImage(FENSTER_SYMBOL);
 		setTitle("Highscore\u00B4s");
-		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setSize(FENSTER_BREITE, FENSTER_HOEHE);
 		setMinimumSize(MINIMALE_GROESSE);
 		setMaximumSize(MAXIMALE_GROESSE);
