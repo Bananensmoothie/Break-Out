@@ -13,10 +13,10 @@ import listeners.EnterHauptfenster;
 import listeners.WindowListener;
 import net.miginfocom.swing.MigLayout;
 
-import java.awt.event.KeyListener;
-import java.util.ArrayList;
+import java.awt.Component;
 
 import javax.swing.ImageIcon;
+import java.awt.Color;
 
 public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarben, ISchriften
 {
@@ -78,7 +78,7 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 	private JPanel pBlau1_9;
 	private JPanel pBlau1_10;
 	private JPanel pBenutzerebene;
-	private JLabel lblBall;
+	private static JLabel lblBall;
 	
 	private static int iFrameGroesseX;
 	private static int iFrameGroesseY;
@@ -342,20 +342,22 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 		pBlau1_10.setBackground(HELL_BLAU);
 		cpHauptfenser.add(pBlau1_10, "cell 9 5,grow");
 
-		setpBall(new JPanel());
-		getpBall().setBackground(GUI_HINTERGRUND);
-		cpHauptfenser.add(getpBall(), "cell 4 10,alignx center,aligny center");
+		//setpBall(new JPanel());
+		//getpBall().setBackground(HELL_BLAU);
+		//cpHauptfenser.add(getpBall(), "cell 4 10,alignx center,aligny center");
 		
-		lblBall = new JLabel("");
-		lblBall.setIcon(new ImageIcon(Hauptfenster.class.getResource("/images/Ball.png")));
-		getpBall().add(lblBall);
+		lblBall = new JLabel("Ball");
+		lblBall.setForeground(new Color(255, 0, 255));
+		lblBall.setBackground(new Color(0, 255, 0));
+		//lblBall.setIcon(new ImageIcon(Hauptfenster.class.getResource("/images/Ball.png")));
+		cpHauptfenser.add(lblBall, "cell 4 10,alignx center,aligny center");
 
 		pBenutzerebene = new JPanel();
 		pBenutzerebene.setBackground(PINK);
 		cpHauptfenser.add(pBenutzerebene, "flowx,cell 4 11 2 1,growx,aligny bottom");
 	}
 
-	public static JPanel getpBall()
+	/*public static JPanel getpBall()
 	{
 		return pBall;
 	}
@@ -363,8 +365,10 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 	public static void setpBall(JPanel pBall)
 	{
 		Hauptfenster.pBall = pBall;
+		pBall.setLocation(10, 10);
 	}
-
+	*/
+	
 	public static int getiFrameGroesseX()
 	{
 		return iFrameGroesseX;
@@ -383,5 +387,10 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 	public static void setiFrameGroesseY(int iFrameGroesseY)
 	{
 		Hauptfenster.iFrameGroesseY = iFrameGroesseY;
+	}
+
+	public static JLabel getLBLBall() 
+	{
+		return lblBall;
 	}
 }

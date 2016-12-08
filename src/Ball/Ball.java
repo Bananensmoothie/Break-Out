@@ -8,35 +8,38 @@ public class Ball
 {
 	private static int xRichtung = -1;
 	private static int yRichtung = -1;
-	private static int iBallKoordinateHorizontal = Hauptfenster.getpBall().getX();
-	private static int iBallKoordinateVertikal = Hauptfenster.getpBall().getY();
+	private static int iBallKoordinateHorizontal = Hauptfenster.getLBLBall().getX();
+	private static int iBallKoordinateVertikal = Hauptfenster.getLBLBall().getY();
 	
 	public static void BallBewegen()
 	{
 		System.out.println( "BallBewegen");
-		
 		for(;;)
 		{
+
+			System.out.println("X-Koordinate: " + Hauptfenster.getLBLBall().getX());
+			System.out.println("Y-Koordinate: " + Hauptfenster.getLBLBall().getY());
 			System.out.print("for ");
-			if(iBallKoordinateHorizontal == 0)
+			
+			if(iBallKoordinateHorizontal <= 0)
 			{
 				xRichtung = xRichtung * -1;
 				System.out.println("if 1");
 			}
 			
-			if(iBallKoordinateVertikal == 0)
+			if(iBallKoordinateVertikal <= 0)
 			{
 				yRichtung = yRichtung * -1;
 				System.out.println("if 2");
 			}
 			
-			if(iBallKoordinateHorizontal == Hauptfenster.getiFrameGroesseX())
+			if(iBallKoordinateHorizontal >= Hauptfenster.getiFrameGroesseX())
 			{
 				xRichtung = xRichtung * -1;
 				System.out.println("if 3");
 			}
 			
-			if(iBallKoordinateVertikal == Hauptfenster.getiFrameGroesseY())
+			if(iBallKoordinateVertikal >= Hauptfenster.getiFrameGroesseY())
 			{
 				yRichtung = yRichtung * -1;
 				System.out.println("if 4");
@@ -45,8 +48,7 @@ public class Ball
 			iBallKoordinateHorizontal = iBallKoordinateHorizontal + xRichtung;
 			iBallKoordinateVertikal = iBallKoordinateVertikal + yRichtung;
 			
-			repaint();
-			
+			Hauptfenster.getLBLBall().setLocation(iBallKoordinateHorizontal, iBallKoordinateVertikal);
 			
 			try
 			{
@@ -57,15 +59,5 @@ public class Ball
 				e.printStackTrace();
 			}
 		}
-	}
-
-	private static void update() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private static void repaint() {
-		// TODO Auto-generated method stub
-		
 	}
 }
