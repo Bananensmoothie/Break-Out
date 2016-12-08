@@ -95,6 +95,7 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 
 	private void initialize()
 	{
+		addKeyListener(new EnterHauptfenster());
 		addWindowListener(new WindowListener(this));
 		setVisible(true);
 		setIconImage(FENSTER_SYMBOL);
@@ -106,6 +107,7 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 		setLocation(FENSTER_POSITION);
 		
 		cpHauptfenser = new JPanel();
+		setFocusable(true);
 		cpHauptfenser.setBackground(GUI_HINTERGRUND);
 		cpHauptfenser.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(cpHauptfenser);
@@ -351,9 +353,6 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 		pBenutzerebene = new JPanel();
 		pBenutzerebene.setBackground(PINK);
 		cpHauptfenser.add(pBenutzerebene, "flowx,cell 4 11 2 1,growx,aligny bottom");
-		
-		cpHauptfenser.setFocusable(true);
-		addKeyListener(new EnterHauptfenster());
 	}
 
 	public static JPanel getpBall()
