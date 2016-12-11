@@ -11,14 +11,21 @@ public class Schlaeger
 	
 	private static JPanel oBezugsPanel;
 	private static int iGeschwindigkeit = 10;
-	private static int iPositionX;
-	private static int iPositionY;
+	private static int iPositionX = 0;
+	private static int iPositionY = 0;
 
-	public Schlaeger(JPanel bezugsPanel, int iPositionX, int iPositionY)
+	public Schlaeger(JPanel bezugsPanel)
 	{
 		oBezugsPanel = bezugsPanel;
-		Schlaeger.iPositionX = iPositionX;
-		Schlaeger.iPositionY = iPositionY;
+		setStartPosition();
+	}
+	
+	private void setStartPosition()
+	{
+		iPositionX = (Hauptfenster.getSpielfeldBreite() / 2) - (oBezugsPanel.getWidth() / 2);
+		iPositionY = (Hauptfenster.getSpielfeldHoehe() / 10) * 9;
+		
+		oBezugsPanel.setLocation(iPositionX, iPositionY);
 	}
 
 	/**

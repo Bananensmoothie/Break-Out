@@ -1,11 +1,13 @@
 package Ball;
 
+import Blöcke.CBloecke;
 import frames.Hauptfenster;
 
 public class Ball 
 {
 	private static int xRichtung = -1;
 	private static int yRichtung = -1;
+	CBloecke oBlock = new CBloecke();
 	
 	public int getBallx()
 	{
@@ -53,6 +55,8 @@ public class Ball
 		
 		iBallKoordinateHorizontal = iBallKoordinateHorizontal + xRichtung;
 		iBallKoordinateVertikal = iBallKoordinateVertikal + yRichtung;
+		
+		oBlock.bloeckePos();
 		
 		Hauptfenster.getLBLBall().setLocation(iBallKoordinateHorizontal, iBallKoordinateVertikal);
 		
