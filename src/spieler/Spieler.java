@@ -39,6 +39,7 @@ public final class Spieler
 			Hauptfenster.getHauptfenster().setVisible(false);
 			new Highscorefenster();
 			Highscorefenster.spielernameEintragen(Startfenster.getSpielername());
+			Hauptfenster.getHauptfenster().timerStoppen();
 			Hauptfenster.getHauptfenster().dispose();
 		}
 		if (leben >= 3)

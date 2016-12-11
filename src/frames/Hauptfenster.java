@@ -83,7 +83,7 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 	private static JPanel cpHauptfenser;
 	private static ImageIcon imBall = new ImageIcon(Hauptfenster.class.getResource("/images/Ball.png"));
 	
-	private Timer  oTimer = new Timer();
+	private Timer oTimer = new Timer();
 	
 	/**
 	 * Create the frame.
@@ -337,17 +337,22 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 		timerStarten();
 	}
 	
+	private static String getSpielstandLabelText()
+	{
+		return "Name: "+ Startfenster.getSpielername() + "               ||               Leben: " + Spieler.getLeben()
+				+ "               ||               Punkte: " + String.format("%,.0f", Spieler.getPunktestand());
+	}
 
-	private void timerStarten()
+	public void timerStarten()
 	{
 		TimerTask oTimerTask = new Task();
 		oTimer.schedule(oTimerTask, 0, 5);
 	}
 	
-	private static String getSpielstandLabelText()
+	public void timerStoppen()
 	{
-		return "Name: "+ Startfenster.getSpielername() + "               ||               Leben: " + Spieler.getLeben()
-				+ "               ||               Punkte: " + String.format("%,.0f", Spieler.getPunktestand());
+		oTimer.cancel();
+		oTimer.purge();
 	}
 	
 	public static void updateSpielstandLabelText()
