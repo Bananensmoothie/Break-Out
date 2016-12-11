@@ -1,7 +1,15 @@
+/Ball/
 /frames/
+<<<<<<< HEAD
 <<<<<<< HEAD
 /images/
 /interfaces/
 /listeners/
 =======
 >>>>>>> branch 'master' of https://github.com/Bananensmoothie/Break-Out
+=======
+/interfaces/
+/listeners/
+>>>>>>> branch 'master' of https://github.com/Bananensmoothie/Break-Out
+/Schläger.class
+/Schlaeger/
