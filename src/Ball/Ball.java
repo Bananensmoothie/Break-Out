@@ -7,6 +7,16 @@ public class Ball
 	private static int xRichtung = -1;
 	private static int yRichtung = -1;
 	
+	public int getBallx()
+	{
+		return Hauptfenster.getLBLBall().getX();
+	}
+	
+	public int getBally()
+	{
+		return Hauptfenster.getLBLBall().getY();
+	}
+	
 	public void BallBewegen()
 	{
 		int iBallKoordinateHorizontal = Hauptfenster.getLBLBall().getX();
