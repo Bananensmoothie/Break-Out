@@ -75,8 +75,6 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 	private JPanel pBlau1_9;
 	private JPanel pBlau1_10;
 	private JPanel pBenutzerebene;
-	
-	private Schlaeger oSchlaeger;
 
 	private static Hauptfenster oHauptfenster;
 	private static JLabel lblSpielstandText;
@@ -92,10 +90,10 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 	 */
 	public Hauptfenster()
 	{
-		initialize();
+		initializeFenster();
 	}
 
-	private void initialize()
+	private void initializeFenster()
 	{
 		oHauptfenster = this;
 		
@@ -335,14 +333,15 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 		pBenutzerebene.setBackground(PINK);
 		cpHauptfenser.add(pBenutzerebene, "flowx,cell 4 9 2 1,growx,aligny bottom");
 		
-		oSchlaeger = new Schlaeger(pBenutzerebene, pBenutzerebene.getBounds().x, pBenutzerebene.getY());
-		Spieler.setLeben(3);
-//		Spieler.setPunktestand(0);
-		
 		getContentPane().add(pSpielstand, BorderLayout.NORTH);
 		getContentPane().add(cpHauptfenser, BorderLayout.CENTER);
-		
-		timerStarten();
+	}
+	
+	private void initializeSpiel()
+	{
+		new Schlaeger(pBenutzerebene);
+		Spieler.setLeben(3);
+		Spieler.setPunktestand(0);
 	}
 	
 	private static String getSpielstandLabelText()
@@ -355,6 +354,7 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 	{
 		TimerTask oTimerTask = new Task();
 		oTimer.schedule(oTimerTask, 0, 5);
+		initializeSpiel();
 	}
 	
 	public void timerStoppen()

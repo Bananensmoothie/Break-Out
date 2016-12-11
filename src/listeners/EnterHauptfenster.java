@@ -3,25 +3,18 @@ package listeners;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-import Ball.Ball;
 import Schlaeger.Schlaeger;
-import spieler.Spieler;
+import frames.Hauptfenster;
 
 public class EnterHauptfenster extends KeyAdapter 
 {
-	private Ball oBall = new Ball();
-	private int iLeben = 2;
-	
 	@Override
 	public void keyPressed(KeyEvent event)
 	{
-		
 		if (event.getKeyCode() == KeyEvent.VK_ENTER)
 		{
-			Spieler.setLeben(iLeben--); // NUR TEST!!!!!!
-			
 			System.out.println("ifEnter");
-			oBall.BallBewegen();
+			Hauptfenster.getHauptfenster().timerStarten();
 		}
 		if (event.getKeyCode() == KeyEvent.VK_LEFT)
 		{
