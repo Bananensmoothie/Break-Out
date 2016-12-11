@@ -8,9 +8,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import Ball.Ball;
+import Schlaeger.Schlaeger;
 import interfaces.IFarben;
 import interfaces.IFensterEigenschaften;
 import interfaces.ISchriften;
@@ -18,8 +20,6 @@ import listeners.EnterHauptfenster;
 import listeners.WindowListener;
 import net.miginfocom.swing.MigLayout;
 import spieler.Spieler;
-
-import javax.swing.SwingConstants;
 
 public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarben, ISchriften
 {
@@ -75,6 +75,8 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 	private JPanel pBlau1_9;
 	private JPanel pBlau1_10;
 	private JPanel pBenutzerebene;
+	
+	private Schlaeger oSchlaeger;
 
 	private static Hauptfenster oHauptfenster;
 	private static JLabel lblSpielstandText;
@@ -111,6 +113,7 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 		getContentPane().setLayout(new BorderLayout());
 		
 		cpHauptfenser = new JPanel();
+		setFocusable(true);
 		cpHauptfenser.setBackground(GUI_HINTERGRUND);
 		cpHauptfenser.setBorder(new EmptyBorder(5, 5, 5, 5));
 		cpHauptfenser.setLayout(new MigLayout("", "[grow][grow][grow][grow][grow][grow][grow][grow][grow][grow]", "[grow][grow][grow][grow][grow][grow][grow][grow][grow][grow][grow]"));
@@ -191,6 +194,7 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 		pOrange1_7 = new JPanel();
 		pOrange1_7.setBackground(ORANGE);
 		cpHauptfenser.add(pOrange1_7, "cell 6 1,grow");
+		
 		pOrange1_8 = new JPanel();
 		pOrange1_8.setBackground(ORANGE);
 		cpHauptfenser.add(pOrange1_8, "cell 7 1,grow");
@@ -222,7 +226,7 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 		pGelb1_5 = new JPanel();
 		pGelb1_5.setBackground(GELB);
 		cpHauptfenser.add(pGelb1_5, "cell 4 2,grow");
-
+		
 		pGelb1_6 = new JPanel();
 		pGelb1_6.setBackground(GELB);
 		cpHauptfenser.add(pGelb1_6, "cell 5 2,grow");
@@ -322,14 +326,18 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 		pBlau1_10 = new JPanel();
 		pBlau1_10.setBackground(HELL_BLAU);
 		cpHauptfenser.add(pBlau1_10, "cell 9 4,grow");
-		
+
 		lblBall = new JLabel();
 		lblBall.setIcon(imBall);
-		cpHauptfenser.add(lblBall, "cell 4 9,alignx center,aligny center");
+		cpHauptfenser.add(lblBall, "cell 4 8,alignx center,aligny center");
 
 		pBenutzerebene = new JPanel();
 		pBenutzerebene.setBackground(PINK);
-		cpHauptfenser.add(pBenutzerebene, "flowx,cell 4 10 2 1,growx,aligny bottom");
+		cpHauptfenser.add(pBenutzerebene, "flowx,cell 4 9 2 1,growx,aligny bottom");
+		
+		oSchlaeger = new Schlaeger(pBenutzerebene, pBenutzerebene.getBounds().x, pBenutzerebene.getY());
+		Spieler.setLeben(3);
+//		Spieler.setPunktestand(0);
 		
 		getContentPane().add(pSpielstand, BorderLayout.NORTH);
 		getContentPane().add(cpHauptfenser, BorderLayout.CENTER);
