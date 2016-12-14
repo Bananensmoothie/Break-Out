@@ -483,7 +483,7 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 		public void run()
 		{
 			oBall.BallBewegen();
-			bloeckePos();
+//			bloeckePos();
 		}
 		
 		public void bloeckePos()
