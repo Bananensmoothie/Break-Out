@@ -11,7 +11,7 @@ import frames.Startfenster;
 public final class Spieler
 {
 	private static int leben = 3;
-	private static double punktestand = 0;
+	private static double punktestand = 999999999999999999L;
 	
 	/**
 	 * @return the leben

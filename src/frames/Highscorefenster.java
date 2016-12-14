@@ -2,6 +2,7 @@ package frames;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,9 +16,13 @@ import interfaces.ISchriften;
 import listeners.ButtonListener;
 import listeners.WindowListener;
 import net.miginfocom.swing.MigLayout;
+import verarbeiten.LogDB;
 
 public class Highscorefenster extends JFrame implements IFensterEigenschaften, IFarben, ISchriften
 {
+	private LogDB log;
+	private ArrayList<String> tabellenEintraege;
+	
 	private JPanel cpHighsore;
 	private JPanel pHighsore;
 	private JPanel pHighsoreAusgabe;
@@ -36,6 +41,19 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 	private JLabel label_12;
 	private JLabel label_13;
 	private JButton btnZumStartfenster;
+	private static JLabel lblPunktePlatz1;
+	private static JLabel lblPunktePlatz2;
+	private static JLabel lblPunktePlatz3;
+	private static JLabel lblPunktePlatz4;
+	private static JLabel lblPunktePlatz5;
+	private static JLabel lblPunktePlatz6;
+	private static JLabel lblPunktePlatz7;
+	private static JLabel lblPunktePlatz8;
+	private static JLabel lblPunktePlatz9;
+	private static JLabel lblPunktePlatz10;
+	private static JLabel lblPunktePlatz11;
+	private static JLabel lblPunktePlatz12;
+	private static JLabel lblPunktePlatz13;
 	private static JLabel lblPlatz1;
 	private static JLabel lblPlatz2;
 	private static JLabel lblPlatz3;
@@ -56,8 +74,9 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 	public Highscorefenster()
 	{
 		initialize();
+		tabelleLaden();
 	}
-	
+
 	private void initialize()
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -89,17 +108,22 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		pHighsoreAusgabe = new JPanel();
 		pHighsoreAusgabe.setBackground(GUI_HINTERGRUND);
 		cpHighsore.add(pHighsoreAusgabe, BorderLayout.CENTER);
-		pHighsoreAusgabe.setLayout(new MigLayout("", "[][]", "[][][][][][][][][][][][][][][][][][][]"));
+		pHighsoreAusgabe.setLayout(new MigLayout("", "[][][456.00]", "[][][][][][][][][][][][][][][][][][][]"));
 		//--------------------------------------------
 		label_1 = new JLabel("1. ");
 		label_1.setFont(SCHRIFT_GROSS_FETT);
 		label_1.setForeground(WEISSE_SCHRIFT);
 		pHighsoreAusgabe.add(label_1, "cell 0 0");
 		
-		lblPlatz1 = new JLabel("New label");
+		lblPlatz1 = new JLabel("WWWWWWWWWWWWWWWWWWWW");
 		lblPlatz1.setFont(SCHRIFT_GROSS_FETT);
 		lblPlatz1.setForeground(WEISSE_SCHRIFT);
-		pHighsoreAusgabe.add(lblPlatz1, "cell 1 0");
+		pHighsoreAusgabe.add(lblPlatz1, "cell 1 0,alignx left,aligny center");
+		
+		lblPunktePlatz1 = new JLabel("999.999.999.999.999.999");
+		lblPunktePlatz1.setFont(SCHRIFT_GROSS_FETT);
+		lblPunktePlatz1.setForeground(WEISSE_SCHRIFT);
+		pHighsoreAusgabe.add(lblPunktePlatz1, "cell 2 0,alignx right,aligny center");
 		//--------------------------------------------
 		label_2 = new JLabel("2. ");
 		label_2.setFont(SCHRIFT_GROSS_FETT);
@@ -109,7 +133,12 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPlatz2 = new JLabel("New label");
 		lblPlatz2.setFont(SCHRIFT_GROSS_FETT);
 		lblPlatz2.setForeground(WEISSE_SCHRIFT);
-		pHighsoreAusgabe.add(lblPlatz2, "cell 1 1");
+		pHighsoreAusgabe.add(lblPlatz2, "cell 1 1,alignx left,aligny center");
+
+		lblPunktePlatz2 = new JLabel("New label");
+		lblPunktePlatz2.setFont(SCHRIFT_GROSS_FETT);
+		lblPunktePlatz2.setForeground(WEISSE_SCHRIFT);
+		pHighsoreAusgabe.add(lblPunktePlatz2, "cell 2 1,alignx right,aligny center");
 		//--------------------------------------------
 		label_3 = new JLabel("3. ");
 		label_3.setFont(SCHRIFT_GROSS_FETT);
@@ -119,7 +148,12 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPlatz3 = new JLabel("New label");
 		lblPlatz3.setFont(SCHRIFT_GROSS_FETT);
 		lblPlatz3.setForeground(WEISSE_SCHRIFT);
-		pHighsoreAusgabe.add(lblPlatz3, "cell 1 2");
+		pHighsoreAusgabe.add(lblPlatz3, "cell 1 2,alignx left,aligny center");
+
+		lblPunktePlatz3 = new JLabel("New label");
+		lblPunktePlatz3.setFont(SCHRIFT_GROSS_FETT);
+		lblPunktePlatz3.setForeground(WEISSE_SCHRIFT);
+		pHighsoreAusgabe.add(lblPunktePlatz3, "cell 2 2,alignx right,aligny center");
 		//--------------------------------------------
 		label_4 = new JLabel("4. ");
 		label_4.setFont(SCHRIFT_GROSS_FETT);
@@ -129,7 +163,12 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPlatz4 = new JLabel("New label");
 		lblPlatz4.setFont(SCHRIFT_GROSS_FETT);
 		lblPlatz4.setForeground(WEISSE_SCHRIFT);
-		pHighsoreAusgabe.add(lblPlatz4, "cell 1 3");
+		pHighsoreAusgabe.add(lblPlatz4, "cell 1 3,alignx left,aligny center");
+
+		lblPunktePlatz4 = new JLabel("New label");
+		lblPunktePlatz4.setFont(SCHRIFT_GROSS_FETT);
+		lblPunktePlatz4.setForeground(WEISSE_SCHRIFT);
+		pHighsoreAusgabe.add(lblPunktePlatz4, "cell 2 3,alignx right,aligny center");
 		//--------------------------------------------
 		label_5 = new JLabel("5. ");
 		label_5.setFont(SCHRIFT_GROSS_FETT);
@@ -139,7 +178,12 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPlatz5 = new JLabel("New label");
 		lblPlatz5.setFont(SCHRIFT_GROSS_FETT);
 		lblPlatz5.setForeground(WEISSE_SCHRIFT);
-		pHighsoreAusgabe.add(lblPlatz5, "cell 1 4");
+		pHighsoreAusgabe.add(lblPlatz5, "cell 1 4,alignx left,aligny center");
+
+		lblPunktePlatz5 = new JLabel("New label");
+		lblPunktePlatz5.setFont(SCHRIFT_GROSS_FETT);
+		lblPunktePlatz5.setForeground(WEISSE_SCHRIFT);
+		pHighsoreAusgabe.add(lblPunktePlatz5, "cell 2 4,alignx right,aligny center");
 		//--------------------------------------------
 		label_6 = new JLabel("6. ");
 		label_6.setFont(SCHRIFT_GROSS_FETT);
@@ -149,7 +193,12 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPlatz6 = new JLabel("New label");
 		lblPlatz6.setFont(SCHRIFT_GROSS_FETT);
 		lblPlatz6.setForeground(WEISSE_SCHRIFT);
-		pHighsoreAusgabe.add(lblPlatz6, "cell 1 5");
+		pHighsoreAusgabe.add(lblPlatz6, "cell 1 5,alignx left,aligny center");
+
+		lblPunktePlatz6 = new JLabel("New label");
+		lblPunktePlatz6.setFont(SCHRIFT_GROSS_FETT);
+		lblPunktePlatz6.setForeground(WEISSE_SCHRIFT);
+		pHighsoreAusgabe.add(lblPunktePlatz6, "cell 2 5,alignx right,aligny center");
 		//--------------------------------------------
 		label_7 = new JLabel("7. ");
 		label_7.setFont(SCHRIFT_GROSS_FETT);
@@ -159,7 +208,12 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPlatz7 = new JLabel("New label");
 		lblPlatz7.setFont(SCHRIFT_GROSS_FETT);
 		lblPlatz7.setForeground(WEISSE_SCHRIFT);
-		pHighsoreAusgabe.add(lblPlatz7, "cell 1 6");
+		pHighsoreAusgabe.add(lblPlatz7, "cell 1 6,alignx left,aligny center");
+
+		lblPunktePlatz7 = new JLabel("New label");
+		lblPunktePlatz7.setFont(SCHRIFT_GROSS_FETT);
+		lblPunktePlatz7.setForeground(WEISSE_SCHRIFT);
+		pHighsoreAusgabe.add(lblPunktePlatz7, "cell 2 6,alignx right,aligny center");
 		//--------------------------------------------
 		label_8 = new JLabel("8. ");
 		label_8.setFont(SCHRIFT_GROSS_FETT);
@@ -169,7 +223,12 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPlatz8 = new JLabel("New label");
 		lblPlatz8.setFont(SCHRIFT_GROSS_FETT);
 		lblPlatz8.setForeground(WEISSE_SCHRIFT);
-		pHighsoreAusgabe.add(lblPlatz8, "cell 1 7");
+		pHighsoreAusgabe.add(lblPlatz8, "cell 1 7,alignx left,aligny center");
+
+		lblPunktePlatz8 = new JLabel("New label");
+		lblPunktePlatz8.setFont(SCHRIFT_GROSS_FETT);
+		lblPunktePlatz8.setForeground(WEISSE_SCHRIFT);
+		pHighsoreAusgabe.add(lblPunktePlatz8, "cell 2 7,alignx right,aligny center");
 		//--------------------------------------------
 		label_9 = new JLabel("9. ");
 		label_9.setFont(SCHRIFT_GROSS_FETT);
@@ -179,7 +238,12 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPlatz9 = new JLabel("New label");
 		lblPlatz9.setFont(SCHRIFT_GROSS_FETT);
 		lblPlatz9.setForeground(WEISSE_SCHRIFT);
-		pHighsoreAusgabe.add(lblPlatz9, "cell 1 8");
+		pHighsoreAusgabe.add(lblPlatz9, "cell 1 8,alignx left,aligny center");
+
+		lblPunktePlatz9 = new JLabel("New label");
+		lblPunktePlatz9.setFont(SCHRIFT_GROSS_FETT);
+		lblPunktePlatz9.setForeground(WEISSE_SCHRIFT);
+		pHighsoreAusgabe.add(lblPunktePlatz9, "cell 2 8,alignx right,aligny center");
 		//--------------------------------------------
 		label_10 = new JLabel("10. ");
 		label_10.setFont(SCHRIFT_GROSS_FETT);
@@ -189,7 +253,12 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPlatz10 = new JLabel("New label");
 		lblPlatz10.setFont(SCHRIFT_GROSS_FETT);
 		lblPlatz10.setForeground(WEISSE_SCHRIFT);
-		pHighsoreAusgabe.add(lblPlatz10, "cell 1 9");
+		pHighsoreAusgabe.add(lblPlatz10, "cell 1 9,alignx left,aligny center");
+
+		lblPunktePlatz10 = new JLabel("New label");
+		lblPunktePlatz10.setFont(SCHRIFT_GROSS_FETT);
+		lblPunktePlatz10.setForeground(WEISSE_SCHRIFT);
+		pHighsoreAusgabe.add(lblPunktePlatz10, "cell 2 9,alignx right,aligny center");
 		//--------------------------------------------
 		label_11 = new JLabel("11. ");
 		label_11.setFont(SCHRIFT_GROSS_FETT);
@@ -199,7 +268,12 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPlatz11 = new JLabel("New label");
 		lblPlatz11.setFont(SCHRIFT_GROSS_FETT);
 		lblPlatz11.setForeground(WEISSE_SCHRIFT);
-		pHighsoreAusgabe.add(lblPlatz11, "cell 1 10");
+		pHighsoreAusgabe.add(lblPlatz11, "cell 1 10,alignx left,aligny center");
+
+		lblPunktePlatz11 = new JLabel("New label");
+		lblPunktePlatz11.setFont(SCHRIFT_GROSS_FETT);
+		lblPunktePlatz11.setForeground(WEISSE_SCHRIFT);
+		pHighsoreAusgabe.add(lblPunktePlatz11, "cell 2 10,alignx right,aligny center");
 		//--------------------------------------------
 		label_12 = new JLabel("12. ");
 		label_12.setFont(SCHRIFT_GROSS_FETT);
@@ -209,7 +283,12 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPlatz12 = new JLabel("New label");
 		lblPlatz12.setFont(SCHRIFT_GROSS_FETT);
 		lblPlatz12.setForeground(WEISSE_SCHRIFT);
-		pHighsoreAusgabe.add(lblPlatz12, "cell 1 11");
+		pHighsoreAusgabe.add(lblPlatz12, "cell 1 11,alignx left,aligny center");
+
+		lblPunktePlatz12 = new JLabel("New label");
+		lblPunktePlatz12.setFont(SCHRIFT_GROSS_FETT);
+		lblPunktePlatz12.setForeground(WEISSE_SCHRIFT);
+		pHighsoreAusgabe.add(lblPunktePlatz12, "cell 2 11,alignx right,aligny center");
 		//--------------------------------------------
 		label_13 = new JLabel("13. ");
 		label_13.setFont(SCHRIFT_GROSS_FETT);
@@ -219,13 +298,31 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPlatz13 = new JLabel("New label");
 		lblPlatz13.setFont(SCHRIFT_GROSS_FETT);
 		lblPlatz13.setForeground(WEISSE_SCHRIFT);
-		pHighsoreAusgabe.add(lblPlatz13, "cell 1 12");
+		pHighsoreAusgabe.add(lblPlatz13, "cell 1 12,alignx left,aligny center");
+
+		lblPunktePlatz13 = new JLabel("New label");
+		lblPunktePlatz13.setFont(SCHRIFT_GROSS_FETT);
+		lblPunktePlatz13.setForeground(WEISSE_SCHRIFT);
+		pHighsoreAusgabe.add(lblPunktePlatz13, "cell 2 12,alignx right,aligny center");
 		//--------------------------------------------
 		btnZumStartfenster = new JButton("Startfenster");
 		btnZumStartfenster.setFont(SCHRIFT_NORMAL_FETT);
 		btnZumStartfenster.addActionListener(new ButtonListener(this, ButtonListener.SHOW_STARTFENSTER));
 		//--------------------------------------------
 		pHighsoreAusgabe.add(btnZumStartfenster, "cell 0 13 2 1,alignx left,aligny center");
+	}
+	
+	private void eintraegeLaden()
+	{
+		log = new LogDB(System.getProperty("user.dir") + "\\data\\dateien\\highscoretable.csv");
+		tabellenEintraege = log.getTabellenEintraege();
+	}
+	
+	private void tabelleLaden()
+	{
+		eintraegeLaden();
+
+		
 	}
 	
 	public static void spielernameEintragen(String spielername)

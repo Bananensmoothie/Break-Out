@@ -24,60 +24,60 @@ import spieler.Spieler;
 public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarben, ISchriften
 {
 	private JPanel pSpielstand;
-	private static JPanel pRot1_1;
-	private static JPanel pRot1_2;
-	private static JPanel pRot1_3;
-	private static JPanel pRot1_4;
-	private static JPanel pRot1_5;
-	private static JPanel pRot1_6;
-	private static JPanel pRot1_7;
-	private static JPanel pRot1_8;
-	private static JPanel pRot1_9;
-	private static JPanel pRot1_10;
-	private static JPanel pOrange1_1;
-	private static JPanel pOrange1_2;
-	private static JPanel pOrange1_3;
-	private static JPanel pOrange1_4;
-	private static JPanel pOrange1_5;
-	private static JPanel pOrange1_6;
-	private static JPanel pOrange1_7;
-	private static JPanel pOrange1_8;
-	private static JPanel pOrange1_9;
-	private static JPanel pOrange1_10;
-	private static JPanel pGelb1_1;
-	private static JPanel pGelb1_2;
-	private static JPanel pGelb1_3;
-	private static JPanel pGelb1_4;
-	private static JPanel pGelb1_5;
-	private static JPanel pGelb1_6;
-	private static JPanel pGelb1_7;
-	private static JPanel pGelb1_8;
-	private static JPanel pGelb1_9;
-	private static JPanel pGelb1_10;
-	private static JPanel pGruen1_1;
-	private static JPanel pGruen1_2;
-	private static JPanel pGruen1_3;
-	private static JPanel pGruen1_4;
-	private static JPanel pGruen1_5;
-	private static JPanel pGruen1_6;
-	private static JPanel pGruen1_7;
-	private static JPanel pGruen1_8;
-	private static JPanel pGruen1_9;
-	private static JPanel pGruen1_10;
-	private static JPanel pBlau1_1;
-	private static JPanel pBlau1_2;
-	private static JPanel pBlau1_3;
-	private static JPanel pBlau1_4;
-	private static JPanel pBlau1_5;
-	private static JPanel pBlau1_6;
-	private static JPanel pBlau1_7;
-	private static JPanel pBlau1_8;
-	private static JPanel pBlau1_9;
-	private static JPanel pBlau1_10;
-	private static JPanel[] aPanels = new JPanel[50];
-	private JPanel pBenutzerebene;
+	private JPanel pRot1_1;
+	private JPanel pRot1_2;
+	private JPanel pRot1_3;
+	private JPanel pRot1_4;
+	private JPanel pRot1_5;
+	private JPanel pRot1_6;
+	private JPanel pRot1_7;
+	private JPanel pRot1_8;
+	private JPanel pRot1_9;
+	private JPanel pRot1_10;
+	private JPanel pOrange1_1;
+	private JPanel pOrange1_2;
+	private JPanel pOrange1_3;
+	private JPanel pOrange1_4;
+	private JPanel pOrange1_5;
+	private JPanel pOrange1_6;
+	private JPanel pOrange1_7;
+	private JPanel pOrange1_8;
+	private JPanel pOrange1_9;
+	private JPanel pOrange1_10;
+	private JPanel pGelb1_1;
+	private JPanel pGelb1_2;
+	private JPanel pGelb1_3;
+	private JPanel pGelb1_4;
+	private JPanel pGelb1_5;
+	private JPanel pGelb1_6;
+	private JPanel pGelb1_7;
+	private JPanel pGelb1_8;
+	private JPanel pGelb1_9;
+	private JPanel pGelb1_10;
+	private JPanel pGruen1_1;
+	private JPanel pGruen1_2;
+	private JPanel pGruen1_3;
+	private JPanel pGruen1_4;
+	private JPanel pGruen1_5;
+	private JPanel pGruen1_6;
+	private JPanel pGruen1_7;
+	private JPanel pGruen1_8;
+	private JPanel pGruen1_9;
+	private JPanel pGruen1_10;
+	private JPanel pBlau1_1;
+	private JPanel pBlau1_2;
+	private JPanel pBlau1_3;
+	private JPanel pBlau1_4;
+	private JPanel pBlau1_5;
+	private JPanel pBlau1_6;
+	private JPanel pBlau1_7;
+	private JPanel pBlau1_8;
+	private JPanel pBlau1_9;
+	private JPanel pBlau1_10;
 	
-	private Schlaeger oSchlaeger;
+	private static JPanel[] aPanels = new JPanel[50];
+	
+	private JPanel pBenutzerebene;
 
 	private static Hauptfenster oHauptfenster;
 	private static JLabel lblSpielstandText;
@@ -134,6 +134,7 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 
 		pRot1_2 = new JPanel();
 		pRot1_2.setBackground(ROT);
+		pRot1_2.setLocation(pRot1_2.getX(), pRot1_2.getY());
 		cpHauptfenser.add(pRot1_2, "cell 1 0,grow");
 
 		pRot1_3 = new JPanel();
@@ -416,10 +417,8 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 	{
 		return lblBall;
 	}
-
-	// **************************************
-
-	public static JPanel[] getPanels()
+	
+	public JPanel[] getPanels()
 	{
 		aPanels[0] = pRot1_1;
 		aPanels[1] = pRot1_2;
@@ -484,6 +483,34 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 		public void run()
 		{
 			oBall.BallBewegen();
+			bloeckePos();
+		}
+		
+		public void bloeckePos()
+		{
+			System.out.println("Blöcke");
+			
+			if(oBall.getBallx() == aPanels[1].getX())
+			{
+				aPanels[1].setVisible(false);
+			}
+//			
+//			System.out.println(aPanels);
+//			
+//			for(int i =  aPanels.length -1; i>0; i--)
+//			{
+//				System.out.println(""+aPanels[i]);
+//				
+//				if(oBall.getBallx()>= aPanels[i].getX())
+//				{
+//					aPanels[i].removeAll();
+//				}
+//				
+//				if(oBall.getBally()>= aPanels[i].getY())
+//				{
+//					aPanels[i].removeAll();
+//				}
+//			}
 		}
 	}
 }
