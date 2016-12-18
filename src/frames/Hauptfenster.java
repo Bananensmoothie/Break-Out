@@ -11,14 +11,14 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import Ball.Ball;
-import Schlaeger.Schlaeger;
+import ball.Ball;
 import interfaces.IFarben;
 import interfaces.IFensterEigenschaften;
 import interfaces.ISchriften;
 import listeners.EnterHauptfenster;
 import listeners.WindowListener;
 import net.miginfocom.swing.MigLayout;
+import schlaeger.Schlaeger;
 import spieler.Spieler;
 
 public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarben, ISchriften

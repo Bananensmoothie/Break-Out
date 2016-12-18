@@ -1,4 +1,4 @@
-package Schlaeger;
+package schlaeger;
 
 import javax.swing.JPanel;
 

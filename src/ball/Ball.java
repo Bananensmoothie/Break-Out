@@ -1,4 +1,4 @@
-package Ball;
+package ball;
 
 import frames.Hauptfenster;
 

@@ -3,8 +3,8 @@ package listeners;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-import Schlaeger.Schlaeger;
 import frames.Hauptfenster;
+import schlaeger.Schlaeger;
 
 public class EnterHauptfenster extends KeyAdapter 
 {
