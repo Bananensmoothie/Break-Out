@@ -23,7 +23,6 @@ import net.miginfocom.swing.MigLayout;
 
 public class Startfenster extends JFrame implements IFensterEigenschaften, IFarben, ISchriften
 {
-	private static String spielername;
 	private static JTextField txtSpielername;
 	private static JButton btnSpielStarten;
 	private static JButton btnHighscore;
@@ -241,16 +240,6 @@ public class Startfenster extends JFrame implements IFensterEigenschaften, IFarb
 		btnHighscore.setFont(SCHRIFT_NORMAL_FETT);
 		btnHighscore.addActionListener(new ButtonListener(this, ButtonListener.SHOW_HIGHSCORES));
 		cpWillkommen.add(btnHighscore, "cell 5 5,alignx center,aligny center");
-	}
-
-	public static String getSpielername()
-	{
-		return spielername;
-	}
-
-	public static void setSpielername(String spielername)
-	{
-		Startfenster.spielername = spielername;
 	}
 
 	/**

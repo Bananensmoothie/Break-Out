@@ -21,34 +21,25 @@ public class Ball
 	{
 		int iBallKoordinateHorizontal = Hauptfenster.getLBLBall().getX();
 		int iBallKoordinateVertikal = Hauptfenster.getLBLBall().getY();
-		 
-		System.out.println("BallBewegen");
-		System.out.println("X-Koordinate: " + Hauptfenster.getLBLBall().getX());
-		System.out.println("Y-Koordinate: " + Hauptfenster.getLBLBall().getY());
-		System.out.print("for ");
 			
 		if(iBallKoordinateHorizontal <= 0)
 		{
 			xRichtung = xRichtung * -1;
-			System.out.println("if 1");
 		}
 			
 		if(iBallKoordinateVertikal <= 0)
 		{
 			yRichtung = yRichtung * -1;
-			System.out.println("if 2");
 		}
 			
 		if(iBallKoordinateHorizontal >= (Hauptfenster.getSpielfeldBreite() - Hauptfenster.getBallBreite()))
 		{
 			xRichtung = xRichtung * -1;
-			System.out.println("if 3");
 		}
 		
 		if(iBallKoordinateVertikal >= (Hauptfenster.getSpielfeldHoehe() - Hauptfenster.getBallHoehe()))
 		{
 			yRichtung = yRichtung * -1;
-			System.out.println("if 4");
 		}
 		
 		iBallKoordinateHorizontal = iBallKoordinateHorizontal + xRichtung;

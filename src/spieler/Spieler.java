@@ -2,7 +2,6 @@ package spieler;
 
 import frames.Hauptfenster;
 import frames.Highscorefenster;
-import frames.Startfenster;
 
 /**
  * @author Manuel Glantschnig
@@ -11,7 +10,18 @@ import frames.Startfenster;
 public final class Spieler
 {
 	private static int leben = 3;
-	private static double punktestand = 999999999999999999L;
+	private static double punktestand = 0;
+	private static String spielername;
+
+	public static String getSpielername()
+	{
+		return spielername;
+	}
+
+	public static void setSpielername(String spielername)
+	{
+		Spieler.spielername = spielername;
+	}
 	
 	/**
 	 * @return the leben
@@ -38,7 +48,7 @@ public final class Spieler
 		{
 			Hauptfenster.getHauptfenster().setVisible(false);
 			new Highscorefenster();
-			Highscorefenster.spielernameEintragen(Startfenster.getSpielername());
+			Highscorefenster.spielernameEintragen(getSpielername());
 			Hauptfenster.getHauptfenster().timerStoppen();
 			Hauptfenster.getHauptfenster().dispose();
 		}

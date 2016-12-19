@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import frames.Startfenster;
+import spieler.Spieler;
 
 /**
  * @author Manuel Glantschnig
@@ -82,7 +83,7 @@ public final class TextfieldListener extends KeyAdapter implements FocusListener
 			if (referenceTextField.getText().matches("[a-zA-Z[0-9]]+"))
 			{
 				hinweisTextfieldText = referenceTextField.getText();
-				Startfenster.setSpielername(referenceTextField.getText());
+				Spieler.setSpielername(referenceTextField.getText());
 				Startfenster.getTxtSpielername().setText(hinweisTextfieldText);
 				Startfenster.getTxtSpielername().setEnabled(false);
 				Startfenster.getBtnSpielStarten().setEnabled(true);

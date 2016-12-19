@@ -7,6 +7,7 @@ import java.util.TimerTask;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
@@ -105,6 +106,8 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 		addWindowListener(new WindowListener(this));
 		setVisible(true);
 		setFocusable(true);
+		setResizable(false);
+		setFocusable(true);
 		setIconImage(FENSTER_SYMBOL);
 		setTitle("Break\u002DOut");
 		setSize(FENSTER_BREITE, FENSTER_HOEHE);
@@ -114,7 +117,6 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 		getContentPane().setLayout(new BorderLayout());
 		
 		cpHauptfenser = new JPanel();
-		setFocusable(true);
 		cpHauptfenser.setBackground(GUI_HINTERGRUND);
 		cpHauptfenser.setBorder(new EmptyBorder(5, 5, 5, 5));
 		cpHauptfenser.setLayout(new MigLayout("", "[grow][grow][grow][grow][grow][grow][grow][grow][grow][grow]", "[grow][grow][grow][grow][grow][grow][grow][grow][grow][grow][grow]"));
@@ -339,6 +341,8 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 		
 		getContentPane().add(pSpielstand, BorderLayout.NORTH);
 		getContentPane().add(cpHauptfenser, BorderLayout.CENTER);
+		
+		showSpielInformation();
 	}
 	
 	private void initializeSpiel()
@@ -348,9 +352,14 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 		Spieler.setPunktestand(0);
 	}
 	
+	private void showSpielInformation()
+	{
+		JOptionPane.showMessageDialog(this, "Zum Starten ENTER dr\u00FCcken\u002E", "Information", JOptionPane.INFORMATION_MESSAGE);
+	}
+	
 	private static String getSpielstandLabelText()
 	{
-		return "Name: "+ Startfenster.getSpielername() + "               ||               Leben: " + Spieler.getLeben()
+		return "Name: "+ Spieler.getSpielername() + "               ||               Leben: " + Spieler.getLeben()
 				+ "               ||               Punkte: " + String.format("%,.0f", Spieler.getPunktestand());
 	}
 
