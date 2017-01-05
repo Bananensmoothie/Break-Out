@@ -2,6 +2,7 @@ package spieler;
 
 import frames.Hauptfenster;
 import frames.Highscorefenster;
+import verarbeiten.Tabelle;
 
 /**
  * @author Manuel Glantschnig
@@ -48,7 +49,7 @@ public final class Spieler
 		{
 			Hauptfenster.getHauptfenster().setVisible(false);
 			new Highscorefenster();
-			Highscorefenster.spielernameEintragen(getSpielername());
+			Tabelle.getTabelle().spielerEintragen(getSpielername(), getPunktestand());
 			Hauptfenster.getHauptfenster().timerStoppen();
 			Hauptfenster.getHauptfenster().dispose();
 		}

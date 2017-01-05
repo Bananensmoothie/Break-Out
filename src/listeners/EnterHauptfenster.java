@@ -3,6 +3,7 @@ package listeners;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+import ball.Ball;
 import frames.Hauptfenster;
 import schlaeger.Schlaeger;
 
@@ -13,7 +14,7 @@ public class EnterHauptfenster extends KeyAdapter
 	{
 		if (event.getKeyCode() == KeyEvent.VK_ENTER)
 		{
-			System.out.println("ifEnter");
+			Ball.setStartPosition();
 			Hauptfenster.getHauptfenster().timerStarten();
 		}
 		if (event.getKeyCode() == KeyEvent.VK_LEFT)

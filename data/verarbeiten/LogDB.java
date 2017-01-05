@@ -23,12 +23,9 @@ public final class LogDB
 		{
 			String[] teile = zeile.split(";");
 			
-			if (teile.length >= 2)
+			for (int i = 0; i < teile.length; i++)
 			{
-				for (int i = 0; i < teile.length; i++)
-				{
-					tabellenEintraege.add(teile[i]);
-				}
+				tabellenEintraege.add(teile[i]);
 			}
 		}
 	}

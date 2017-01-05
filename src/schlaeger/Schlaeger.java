@@ -20,7 +20,7 @@ public class Schlaeger
 		setStartPosition();
 	}
 	
-	private void setStartPosition()
+	public void setStartPosition()
 	{
 		iPositionX = (Hauptfenster.getSpielfeldBreite() / 2) - (oBezugsPanel.getWidth() / 2);
 		iPositionY = (Hauptfenster.getSpielfeldHoehe() / 10) * 9;
@@ -49,5 +49,20 @@ public class Schlaeger
 				oBezugsPanel.setLocation(iPositionX, iPositionY);
 			}
 		}
+	}
+	
+	public static int getX()
+	{
+		return iPositionX;
+	}
+	
+	public static int getY()
+	{
+		return iPositionY;
+	}
+	
+	public static int getBreite()
+	{
+		return oBezugsPanel.getWidth();
 	}
 }

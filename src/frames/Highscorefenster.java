@@ -17,11 +17,12 @@ import listeners.ButtonListener;
 import listeners.WindowListener;
 import net.miginfocom.swing.MigLayout;
 import verarbeiten.LogDB;
+import verarbeiten.Tabelle;
 
 public class Highscorefenster extends JFrame implements IFensterEigenschaften, IFarben, ISchriften
 {
-	private LogDB log;
-	private ArrayList<String> tabellenEintraege;
+//	private LogDB log;
+//	private ArrayList<String> tabellenEintraege;
 	
 	private JPanel cpHighsore;
 	private JPanel pHighsore;
@@ -41,19 +42,6 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 	private JLabel label_12;
 	private JLabel label_13;
 	private JButton btnZumStartfenster;
-	private static JLabel lblPunktePlatz1;
-	private static JLabel lblPunktePlatz2;
-	private static JLabel lblPunktePlatz3;
-	private static JLabel lblPunktePlatz4;
-	private static JLabel lblPunktePlatz5;
-	private static JLabel lblPunktePlatz6;
-	private static JLabel lblPunktePlatz7;
-	private static JLabel lblPunktePlatz8;
-	private static JLabel lblPunktePlatz9;
-	private static JLabel lblPunktePlatz10;
-	private static JLabel lblPunktePlatz11;
-	private static JLabel lblPunktePlatz12;
-	private static JLabel lblPunktePlatz13;
 	private static JLabel lblPlatz1;
 	private static JLabel lblPlatz2;
 	private static JLabel lblPlatz3;
@@ -67,6 +55,19 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 	private static JLabel lblPlatz11;
 	private static JLabel lblPlatz12;
 	private static JLabel lblPlatz13;
+	private static JLabel lblPunktePlatz1;
+	private static JLabel lblPunktePlatz2;
+	private static JLabel lblPunktePlatz3;
+	private static JLabel lblPunktePlatz4;
+	private static JLabel lblPunktePlatz5;
+	private static JLabel lblPunktePlatz6;
+	private static JLabel lblPunktePlatz7;
+	private static JLabel lblPunktePlatz8;
+	private static JLabel lblPunktePlatz9;
+	private static JLabel lblPunktePlatz10;
+	private static JLabel lblPunktePlatz11;
+	private static JLabel lblPunktePlatz12;
+	private static JLabel lblPunktePlatz13;
 	
 	/**
 	 * Create the frame.
@@ -74,7 +75,7 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 	public Highscorefenster()
 	{
 		initialize();
-		tabelleLaden();
+		new Tabelle();
 	}
 
 	private void initialize()
@@ -311,24 +312,204 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		//--------------------------------------------
 		pHighsoreAusgabe.add(btnZumStartfenster, "cell 0 13 2 1,alignx left,aligny center");
 	}
-	
-	private void eintraegeLaden()
-	{
-		log = new LogDB(System.getProperty("user.dir") + "\\data\\dateien\\highscoretable.csv");
-		tabellenEintraege = log.getTabellenEintraege();
-	}
-	
-	private void tabelleLaden()
-	{
-		eintraegeLaden();
 
-		
-	}
-	
-	public static void spielernameEintragen(String spielername)
+	/**
+	 * @return the lblPlatz1
+	 */
+	public static JLabel getLblPlatz1()
 	{
-		// NUR TEST!!!!
-		lblPlatz1.setText(spielername);
-		lblPlatz1.setForeground(Color.RED);
+		return lblPlatz1;
+	}
+
+	/**
+	 * @return the lblPlatz2
+	 */
+	public static JLabel getLblPlatz2()
+	{
+		return lblPlatz2;
+	}
+
+	/**
+	 * @return the lblPlatz3
+	 */
+	public static JLabel getLblPlatz3()
+	{
+		return lblPlatz3;
+	}
+
+	/**
+	 * @return the lblPlatz4
+	 */
+	public static JLabel getLblPlatz4()
+	{
+		return lblPlatz4;
+	}
+
+	/**
+	 * @return the lblPlatz5
+	 */
+	public static JLabel getLblPlatz5()
+	{
+		return lblPlatz5;
+	}
+
+	/**
+	 * @return the lblPlatz6
+	 */
+	public static JLabel getLblPlatz6()
+	{
+		return lblPlatz6;
+	}
+
+	/**
+	 * @return the lblPlatz7
+	 */
+	public static JLabel getLblPlatz7()
+	{
+		return lblPlatz7;
+	}
+
+	/**
+	 * @return the lblPlatz8
+	 */
+	public static JLabel getLblPlatz8()
+	{
+		return lblPlatz8;
+	}
+
+	/**
+	 * @return the lblPlatz9
+	 */
+	public static JLabel getLblPlatz9()
+	{
+		return lblPlatz9;
+	}
+
+	/**
+	 * @return the lblPlatz10
+	 */
+	public static JLabel getLblPlatz10()
+	{
+		return lblPlatz10;
+	}
+
+	/**
+	 * @return the lblPlatz11
+	 */
+	public static JLabel getLblPlatz11()
+	{
+		return lblPlatz11;
+	}
+
+	/**
+	 * @return the lblPlatz12
+	 */
+	public static JLabel getLblPlatz12()
+	{
+		return lblPlatz12;
+	}
+
+	/**
+	 * @return the lblPlatz13
+	 */
+	public static JLabel getLblPlatz13()
+	{
+		return lblPlatz13;
+	}
+
+	/**
+	 * @return the lblPunktePlatz1
+	 */
+	public static JLabel getLblPunktePlatz1()
+	{
+		return lblPunktePlatz1;
+	}
+
+	/**
+	 * @return the lblPunktePlatz2
+	 */
+	public static JLabel getLblPunktePlatz2()
+	{
+		return lblPunktePlatz2;
+	}
+
+	/**
+	 * @return the lblPunktePlatz3
+	 */
+	public static JLabel getLblPunktePlatz3()
+	{
+		return lblPunktePlatz3;
+	}
+
+	/**
+	 * @return the lblPunktePlatz4
+	 */
+	public static JLabel getLblPunktePlatz4()
+	{
+		return lblPunktePlatz4;
+	}
+
+	/**
+	 * @return the lblPunktePlatz5
+	 */
+	public static JLabel getLblPunktePlatz5()
+	{
+		return lblPunktePlatz5;
+	}
+
+	/**
+	 * @return the lblPunktePlatz6
+	 */
+	public static JLabel getLblPunktePlatz6()
+	{
+		return lblPunktePlatz6;
+	}
+
+	/**
+	 * @return the lblPunktePlatz7
+	 */
+	public static JLabel getLblPunktePlatz7()
+	{
+		return lblPunktePlatz7;
+	}
+
+	/**
+	 * @return the lblPunktePlatz8
+	 */
+	public static JLabel getLblPunktePlatz8()
+	{
+		return lblPunktePlatz8;
+	}
+
+	/**
+	 * @return the lblPunktePlatz9
+	 */
+	public static JLabel getLblPunktePlatz9()
+	{
+		return lblPunktePlatz9;
+	}
+
+	/**
+	 * @return the lblPunktePlatz11
+	 */
+	public static JLabel getLblPunktePlatz11()
+	{
+		return lblPunktePlatz11;
+	}
+
+	/**
+	 * @return the lblPunktePlatz12
+	 */
+	public static JLabel getLblPunktePlatz12()
+	{
+		return lblPunktePlatz12;
+	}
+
+	/**
+	 * @return the lblPunktePlatz13
+	 */
+	public static JLabel getLblPunktePlatz13()
+	{
+		return lblPunktePlatz13;
 	}
 }
