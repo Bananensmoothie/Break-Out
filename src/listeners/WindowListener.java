@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import frames.Hauptfenster;
+import frames.Highscorefenster;
+import verarbeiten.Tabelle;
 
 /**
  * @author Manuel Glantschnig
@@ -36,6 +38,11 @@ public class WindowListener extends WindowAdapter
 		if (referenceFrame instanceof Hauptfenster)
 		{
 			warning += "\n\nDadurch geht Ihr gesamter Spielfortschritt verloren\u0021";
+		}
+		
+		if (referenceFrame instanceof Highscorefenster)
+		{
+			Tabelle.getTabelle().ranglisteSpeichern();
 		}
 		
 		int optionPane = JOptionPane.showOptionDialog(parentComponent, warning, titel, optionType, messageType, null, optionen, optionen[0]);

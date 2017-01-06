@@ -47,9 +47,10 @@ public final class Spieler
 	{
 		if (leben <= 0)
 		{
+			Hauptfenster.updateSpielstandLabelText();
 			Hauptfenster.getHauptfenster().setVisible(false);
 			new Highscorefenster();
-			Tabelle.getTabelle().spielerEintragen(getSpielername(), getPunktestand());
+			Tabelle.getTabelle().aktuellenSpielerEintragen(getSpielername(), getPunktestand());
 			Hauptfenster.getHauptfenster().timerStoppen();
 			Hauptfenster.getHauptfenster().dispose();
 		}
@@ -74,6 +75,15 @@ public final class Spieler
 		{
 			Spieler.punktestand = 0;
 			Hauptfenster.updateSpielstandLabelText();
+		}
+		if(punktestand >= 300000000)
+		{
+			Hauptfenster.updateSpielstandLabelText();
+			Hauptfenster.getHauptfenster().setVisible(false);
+			new Highscorefenster();
+			Tabelle.getTabelle().aktuellenSpielerEintragen(getSpielername(), 300000000);
+			Hauptfenster.getHauptfenster().timerStoppen();
+			Hauptfenster.getHauptfenster().dispose();
 		}
 		else
 		{

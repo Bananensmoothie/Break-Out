@@ -7,13 +7,18 @@ import ball.Ball;
 import frames.Hauptfenster;
 import schlaeger.Schlaeger;
 
-public class EnterHauptfenster extends KeyAdapter 
+public class EnterHauptfenster extends KeyAdapter
 {
 	@Override
 	public void keyPressed(KeyEvent event)
 	{
 		if (event.getKeyCode() == KeyEvent.VK_ENTER)
 		{
+			if (Hauptfenster.isTimerAktiv())
+			{
+				Hauptfenster.getHauptfenster().timerStoppen();
+				Hauptfenster.getHauptfenster().showSpielInformation();
+			}
 			Ball.setStartPosition();
 			Hauptfenster.getHauptfenster().timerStarten();
 		}

@@ -24,12 +24,14 @@ import spieler.Spieler;
 public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarben, ISchriften
 {
 	private static final int GUI_SPALTEN = 10;
-	private static final int GUI_ZEILEN = 10;
+	private static final int GUI_ZEILEN = 5;
 	
 	private JPanel pSpielstand;
 	private JPanel pBenutzerebene;
 	
 	private Timer oTimer;
+	
+	private static boolean timerAktiv = false;
 	
 	private static JPanel[][] aPanel = new JPanel[50][50];
 	
@@ -47,16 +49,10 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 	{
 		initializeFenster();
 	}
-
-	public static void arraygetPanels()
+	
+	public static JPanel[][] getAPanels()
 	{
-		for (int iZeile = 0; iZeile < GUI_ZEILEN; iZeile++)
-		{
-			for (int iSpalte = 0; iSpalte < GUI_SPALTEN; iSpalte++)
-			{
-				Ball.setPanels(aPanel[iZeile][iSpalte], iZeile, iSpalte);
-			}
-		}
+		return aPanel;
 	}
 
 	private void initializeFenster()
@@ -121,21 +117,6 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 
 		initializeSpiel();
 		showSpielInformation();
-	}
-
-	private void initializeSpiel()
-	{
-		Spieler.setLeben(3);
-		Spieler.setPunktestand(0);
-	}
-
-	private void showSpielInformation()
-	{
-		JOptionPane.showMessageDialog(	getHauptfenster(), "Zum Starten des Spiels\u002C oder wenn Sie ein Leben verlieren ENTER dr\u00FCcken\u002E\n"
-		                              					 + "\n"
-														 + "\u0021 \u0021 \u0021 ACHTUNG \u0021 \u0021 \u0021\n"
-														 + "Bei Bet\u00E4tigung der ENTER\u002DTaste fliegt der Ball automatisch los\u0021",
-										"Information", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	private void generateBloecke()
@@ -210,14 +191,31 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 		Hauptfenster.cpHauptfenster = cpHauptfenster;
 	}
 
+	private void initializeSpiel()
+	{
+		Spieler.setLeben(3);
+		Spieler.setPunktestand(0);
+	}
+
 	private static String getSpielstandLabelText()
 	{
 		return "Name: "+ Spieler.getSpielername() + "               ||               Leben: " + Spieler.getLeben()
 				+ "               ||               Punkte: " + String.format("%,.0f", Spieler.getPunktestand());
 	}
 
+	public void showSpielInformation()
+	{
+		JOptionPane.showMessageDialog(	getHauptfenster(), "Zum Starten des Spiels\u002C oder wenn Sie ein Leben verlieren ENTER dr\u00FCcken\u002E\n"
+		                              					 + "\n"
+														 + "\u0021 \u0021 \u0021 ACHTUNG \u0021 \u0021 \u0021\n"
+														 + "Bei Bet\u00E4tigung der ENTER\u002DTaste fliegt der Ball automatisch los\u0021",
+										"Information", JOptionPane.INFORMATION_MESSAGE);
+		initializeSpiel();
+	}
+
 	public void timerStarten()
 	{
+		timerAktiv = true;
 		oTimer = new Timer();
 		TimerTask oTimerTask = new Task();
 		oTimer.schedule(oTimerTask, 0, 5);
@@ -225,6 +223,7 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 
 	public void timerStoppen()
 	{
+		timerAktiv = false;
 		oTimer.cancel();
 		oTimer.purge();
 	}
@@ -262,6 +261,11 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 	public static int getSpielfeldHoehe()
 	{
 		return getCpHauptfenster().getHeight();
+	}
+
+	public static boolean isTimerAktiv()
+	{
+		return timerAktiv;
 	}
 
 	public static JPanel getCpHauptfenster()

@@ -7,12 +7,12 @@ import javax.swing.JPanel;
 
 public final class Ball
 {
-	private static int xRichtung = 1;
-	private static int yRichtung = 1;
+	private static int xRichtung = -1;
+	private static int yRichtung = -1;
 	private static int iPositionX = 0;
 	private static int iPositionY = 0;
 	private static JPanel[][] aPanel;
-	
+
 	public static int getBallX()
 	{
 		return Hauptfenster.getBall().getX();
@@ -23,17 +23,11 @@ public final class Ball
 		return Hauptfenster.getBall().getY();
 	}
 
-	public static JPanel[][] setPanels(JPanel aPanels, int i, int x)
-	{
-		aPanel[i][x] = aPanels;
-		return aPanel;
-	}
-
 	public static void setStartPosition()
 	{
 		iPositionX = (Hauptfenster.FENSTER_BREITE / 2) - (Hauptfenster.getBallBreite() / 2);
 		iPositionY = (Hauptfenster.FENSTER_HOEHE / 2);
-		
+
 		Hauptfenster.getBall().setLocation(iPositionX, iPositionY);
 	}
 
@@ -45,37 +39,58 @@ public final class Ball
 		int iBallBreite = Hauptfenster.getBallBreite();
 		int iSchlaegerPosX = Schlaeger.getX();
 		int iSchlaegerPosY = Schlaeger.getY();
-		
+
 		int iSchlaegerBreite = Schlaeger.getBreite();
 		int iSpielfeldBreite = Hauptfenster.getSpielfeldBreite();
 
-//		for (int i = 0; i < 5; i++)
-//		{
-//			for (int x = 0; x < 10; x++)
-//			{
-//				System.out.println(x);
-//				if (getBallX() >= aPanel[i][x].getX() && getBallX() <= aPanel[i][x].getX() + 105)
-//				{
-//					aPanel[i][x].setVisible(false);
-//					aPanel[i][x].removeAll();
-//					xRichtung = xRichtung * -1;
-//					Hauptfenster.getCpHauptfenster().repaint();
-//					System.out.println("Vielen Tag ich Funktioniere!1");
-//					Spieler.setPunktestand(Spieler.getPunktestand() + 200);
-//
-//				}
-//				if (getBallY() >= aPanel[i][x].getY() && getBallY() <= aPanel[i][x].getY() + 105)
-//				{
-//					aPanel[i][x].setVisible(false);
-//					aPanel[i][x].removeAll();
-//					Hauptfenster.getCpHauptfenster().repaint();
-//					yRichtung = yRichtung * -1;
-//					Spieler.setPunktestand(Spieler.getPunktestand() + 200);
-//					System.out.println("Vielen Tag ich Funktioniere!2");
-//
-//				}
-//			}
-//		}
+		aPanel = Hauptfenster.getAPanels();
+
+		for (int iZeile = 0; iZeile < 5; iZeile++)
+		{
+			for (int iSpalte = 0; iSpalte < 10; iSpalte++)
+			{
+//				System.out.println("X: " + aPanel[iZeile][iSpalte].getX());
+//				System.out.println("Y: " + aPanel[iZeile][iSpalte].getY());
+
+				if ((iBallPosY >= aPanel[iZeile][iSpalte].getY())&& (iBallPosY <= (aPanel[iZeile][iSpalte].getY() + 55))
+					&& aPanel[iZeile][iSpalte].isVisible())
+				{
+					if ((iBallPosX >= aPanel[iZeile][iSpalte].getX())&& (iBallPosX <= (aPanel[iZeile][iSpalte].getX() + 109))
+						&& aPanel[iZeile][iSpalte].isVisible())
+					{
+						aPanel[iZeile][iSpalte].setVisible(false);
+						Hauptfenster.getCpHauptfenster().repaint();
+
+						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.HELL_BLAU)
+						{
+							Spieler.setPunktestand(Spieler.getPunktestand() + 2000000);
+						}
+
+						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.GRUEN)
+						{
+							Spieler.setPunktestand(Spieler.getPunktestand() + 4000000);
+						}
+
+						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.GELB)
+						{
+							Spieler.setPunktestand(Spieler.getPunktestand() + 6000000);
+						}
+
+						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.ORANGE)
+						{
+							Spieler.setPunktestand(Spieler.getPunktestand() + 8000000);
+						}
+
+						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.ROT)
+						{
+							Spieler.setPunktestand(Spieler.getPunktestand() + 10000000);
+						}
+
+						yRichtung = yRichtung * -1;
+					}
+				}
+			}
+		}
 
 		if (iBallPosX <= 0)
 		{
@@ -91,8 +106,7 @@ public final class Ball
 		{
 			xRichtung = xRichtung * -1;
 		}
-		
-		/* Manuel Glantschnig */
+
 		if (iBallPosY >= (iSchlaegerPosY - iBallHoehe))
 		{
 			if ((iBallPosX > iSchlaegerPosX) && (iBallPosX < (iSchlaegerPosX + (iSchlaegerBreite - iBallBreite))))
@@ -100,7 +114,7 @@ public final class Ball
 				yRichtung = yRichtung * -1;
 			}
 		}
-		
+
 		if ((iBallPosY - iBallHoehe) >= iSchlaegerPosY)
 		{
 			Spieler.setLeben(Spieler.getLeben() - 1);
