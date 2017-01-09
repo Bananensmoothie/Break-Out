@@ -118,6 +118,17 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 		initializeSpiel();
 		showSpielInformation();
 	}
+
+	private void setCpHauptfenster(JPanel cpHauptfenster)
+	{
+		Hauptfenster.cpHauptfenster = cpHauptfenster;
+	}
+
+	private void initializeSpiel()
+	{
+		Spieler.setLeben(3);
+		Spieler.setPunktestand(0);
+	}
 	
 	private void generateBloecke()
 	{
@@ -184,17 +195,6 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 			xPos = 5;
 			yPos += 55;
 		}
-	}
-
-	private void setCpHauptfenster(JPanel cpHauptfenster)
-	{
-		Hauptfenster.cpHauptfenster = cpHauptfenster;
-	}
-
-	private void initializeSpiel()
-	{
-		Spieler.setLeben(3);
-		Spieler.setPunktestand(0);
 	}
 
 	private static String getSpielstandLabelText()

@@ -128,7 +128,7 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		pPunkte.setLayout(new BoxLayout(pPunkte, BoxLayout.Y_AXIS));
 		pHighsoreAusgabe.add(pPunkte, BorderLayout.EAST);
 		
-		label_1 = new JLabel("1.");
+		label_1 = new JLabel("1. ");
 		label_1.setFont(SCHRIFT_GROSS_FETT);
 		label_1.setForeground(WEISSE_SCHRIFT);
 		pPlatzierungen.add(label_1);
@@ -146,7 +146,7 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPunktePlatz1.setForeground(WEISSE_SCHRIFT);
 		pPunkte.add(lblPunktePlatz1);
 		
-		label_2 = new JLabel("2.");
+		label_2 = new JLabel("2. ");
 		label_2.setFont(SCHRIFT_GROSS_FETT);
 		label_2.setForeground(WEISSE_SCHRIFT);
 		pPlatzierungen.add(label_2);
@@ -164,7 +164,7 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPunktePlatz2.setForeground(WEISSE_SCHRIFT);
 		pPunkte.add(lblPunktePlatz2);
 		
-		label_3 = new JLabel("3.");
+		label_3 = new JLabel("3. ");
 		label_3.setFont(SCHRIFT_GROSS_FETT);
 		label_3.setForeground(WEISSE_SCHRIFT);
 		pPlatzierungen.add(label_3);
@@ -182,7 +182,7 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPunktePlatz3.setForeground(WEISSE_SCHRIFT);
 		pPunkte.add(lblPunktePlatz3);
 		
-		label_4 = new JLabel("4.");
+		label_4 = new JLabel("4. ");
 		label_4.setFont(SCHRIFT_GROSS_FETT);
 		label_4.setForeground(WEISSE_SCHRIFT);
 		pPlatzierungen.add(label_4);
@@ -200,7 +200,7 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPunktePlatz4.setForeground(WEISSE_SCHRIFT);
 		pPunkte.add(lblPunktePlatz4);
 		
-		label_5 = new JLabel("5.");
+		label_5 = new JLabel("5. ");
 		label_5.setFont(SCHRIFT_GROSS_FETT);
 		label_5.setForeground(WEISSE_SCHRIFT);
 		pPlatzierungen.add(label_5);
@@ -218,7 +218,7 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPunktePlatz5.setForeground(WEISSE_SCHRIFT);
 		pPunkte.add(lblPunktePlatz5);
 		
-		label_6 = new JLabel("6.");
+		label_6 = new JLabel("6. ");
 		label_6.setFont(SCHRIFT_GROSS_FETT);
 		label_6.setForeground(WEISSE_SCHRIFT);
 		pPlatzierungen.add(label_6);
@@ -236,7 +236,7 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPunktePlatz6.setForeground(WEISSE_SCHRIFT);
 		pPunkte.add(lblPunktePlatz6);
 		
-		label_7 = new JLabel("7.");
+		label_7 = new JLabel("7. ");
 		label_7.setFont(SCHRIFT_GROSS_FETT);
 		label_7.setForeground(WEISSE_SCHRIFT);
 		pPlatzierungen.add(label_7);
@@ -254,7 +254,7 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPunktePlatz7.setForeground(WEISSE_SCHRIFT);
 		pPunkte.add(lblPunktePlatz7);
 		
-		label_8 = new JLabel("8.");
+		label_8 = new JLabel("8. ");
 		label_8.setFont(SCHRIFT_GROSS_FETT);
 		label_8.setForeground(WEISSE_SCHRIFT);
 		pPlatzierungen.add(label_8);
@@ -272,7 +272,7 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPunktePlatz8.setForeground(WEISSE_SCHRIFT);
 		pPunkte.add(lblPunktePlatz8);
 		
-		label_9 = new JLabel("9.");
+		label_9 = new JLabel("9. ");
 		label_9.setFont(SCHRIFT_GROSS_FETT);
 		label_9.setForeground(WEISSE_SCHRIFT);
 		pPlatzierungen.add(label_9);
@@ -290,7 +290,7 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPunktePlatz9.setForeground(WEISSE_SCHRIFT);
 		pPunkte.add(lblPunktePlatz9);
 		
-		label_10 = new JLabel("10.");
+		label_10 = new JLabel("10. ");
 		label_10.setFont(SCHRIFT_GROSS_FETT);
 		label_10.setForeground(WEISSE_SCHRIFT);
 		pPlatzierungen.add(label_10);
@@ -308,7 +308,7 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPunktePlatz10.setForeground(WEISSE_SCHRIFT);
 		pPunkte.add(lblPunktePlatz10);
 		
-		label_11 = new JLabel("11.");
+		label_11 = new JLabel("11. ");
 		label_11.setFont(SCHRIFT_GROSS_FETT);
 		label_11.setForeground(WEISSE_SCHRIFT);
 		pPlatzierungen.add(label_11);
@@ -326,7 +326,7 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPunktePlatz11.setForeground(WEISSE_SCHRIFT);
 		pPunkte.add(lblPunktePlatz11);
 		
-		label_12 = new JLabel("12.");
+		label_12 = new JLabel("12. ");
 		label_12.setFont(SCHRIFT_GROSS_FETT);
 		label_12.setForeground(WEISSE_SCHRIFT);
 		pPlatzierungen.add(label_12);
@@ -344,7 +344,7 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPunktePlatz12.setForeground(WEISSE_SCHRIFT);
 		pPunkte.add(lblPunktePlatz12);
 		
-		label_13 = new JLabel("13.");
+		label_13 = new JLabel("13. ");
 		label_13.setFont(SCHRIFT_GROSS_FETT);
 		label_13.setForeground(WEISSE_SCHRIFT);
 		pPlatzierungen.add(label_13);
@@ -362,7 +362,7 @@ public class Highscorefenster extends JFrame implements IFensterEigenschaften, I
 		lblPunktePlatz13.setForeground(WEISSE_SCHRIFT);
 		pPunkte.add(lblPunktePlatz13);
 		
-		label_14 = new JLabel("14.");
+		label_14 = new JLabel("14. ");
 		label_14.setFont(SCHRIFT_GROSS_FETT);
 		label_14.setForeground(WEISSE_SCHRIFT);
 		pPlatzierungen.add(label_14);

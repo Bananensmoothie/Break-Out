@@ -5,15 +5,33 @@ import frames.Highscorefenster;
 import verarbeiten.Tabelle;
 
 /**
- * @author Manuel Glantschnig
+ * In der<i>"<b>Spieler</b>" - Klasse </i> werden die <b>Leben</b>, der <b>Punktestand</b> und der <b>Spielername</b> <i>verwaltet</i><br>
+ * und die <i>entsprechenden</i> <i>Massnahmen zur </i><b>Weiterverarbeitung</b> <i>ergriffen</i>.<br>
+ * 
  * @version 1.0
+ * 
+ * @author Thomas Mader-Ofer
+ * @author Manuel Glantschnig
+ * @author Jonas Hörtnagl
+ * @author Cristina Erhart
+ * 
  */
 public final class Spieler
 {
+	/**
+	 * Die Variable "<i><b>leben</b></i>" wurde der <i>Wert</i> <b>3</b> zugewiessen.<br>
+	 */
 	private static int leben = 3;
+	/**
+	 * Die Variable "<i><b>punktestand</b></i>" wurde der <i>Wert</i> <b>0</b> zugewiessen.<br>
+	 */
 	private static double punktestand = 0;
+	/**
+	 * Die Variable "<i><b>spielername</b></i>" wurde erstellt.<br>
+	 */
 	private static String spielername;
 
+	
 	public static String getSpielername()
 	{
 		return spielername;
@@ -76,12 +94,12 @@ public final class Spieler
 			Spieler.punktestand = 0;
 			Hauptfenster.updateSpielstandLabelText();
 		}
-		if(punktestand >= 300000000)
+		if(punktestand >= 30000000000L)
 		{
 			Hauptfenster.updateSpielstandLabelText();
 			Hauptfenster.getHauptfenster().setVisible(false);
 			new Highscorefenster();
-			Tabelle.getTabelle().aktuellenSpielerEintragen(getSpielername(), 300000000);
+			Tabelle.getTabelle().aktuellenSpielerEintragen(getSpielername(), 30000000000L);
 			Hauptfenster.getHauptfenster().timerStoppen();
 			Hauptfenster.getHauptfenster().dispose();
 		}
