@@ -94,12 +94,12 @@ public final class Spieler
 			Spieler.punktestand = 0;
 			Hauptfenster.updateSpielstandLabelText();
 		}
-		if(punktestand >= 30000000000L)
+		if(punktestand >= 300000000000L)
 		{
 			Hauptfenster.updateSpielstandLabelText();
 			Hauptfenster.getHauptfenster().setVisible(false);
 			new Highscorefenster();
-			Tabelle.getTabelle().aktuellenSpielerEintragen(getSpielername(), 30000000000L);
+			Tabelle.getTabelle().aktuellenSpielerEintragen(getSpielername(), 300000000000L);
 			Hauptfenster.getHauptfenster().timerStoppen();
 			Hauptfenster.getHauptfenster().dispose();
 		}

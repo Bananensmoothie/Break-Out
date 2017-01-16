@@ -107,27 +107,27 @@ public final class Ball
 
 						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.HELL_BLAU)		//Wenn die Hintergrundfarbe des jeweiligen Bausteins "hellblau" betraegt, wird folgendes ausgefuehrt.
 						{
-							Spieler.setPunktestand(Spieler.getPunktestand() + 2000000);				//Der Punktestand des aktuellen Spielers wird um 2000000 erhoet.
+							Spieler.setPunktestand(Spieler.getPunktestand() + 2000000000L);			//Der Punktestand des aktuellen Spielers wird um 2000000 erhoet.
 						}
 
 						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.GRUEN)			//Wenn die Hintergrundfarbe des jeweiligen Bausteins "gruen" betraegt, wird folgendes ausgefuehrt.
 						{
-							Spieler.setPunktestand(Spieler.getPunktestand() + 4000000);				//Der Punktestand des aktuellen Spielers wird um 4000000 erhoet.
+							Spieler.setPunktestand(Spieler.getPunktestand() + 4000000000L);			//Der Punktestand des aktuellen Spielers wird um 4000000 erhoet.
 						}
 
 						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.GELB)			//Wenn die Hintergrundfarbe des jeweiligen Bausteins "gelb" betraegt, wird folgendes ausgefuehrt.
 						{
-							Spieler.setPunktestand(Spieler.getPunktestand() + 6000000);				//Der Punktestand des aktuellen Spielers wird um 6000000 erhoet.
+							Spieler.setPunktestand(Spieler.getPunktestand() + 6000000000L);			//Der Punktestand des aktuellen Spielers wird um 6000000 erhoet.
 						}
 
 						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.ORANGE)			//Wenn die Hintergrundfarbe des jeweiligen Bausteins "orange" betraegt, wird folgendes ausgefuehrt.
 						{
-							Spieler.setPunktestand(Spieler.getPunktestand() + 8000000);				//Der Punktestand des aktuellen Spielers wird um 8000000 erhoet.
+							Spieler.setPunktestand(Spieler.getPunktestand() + 8000000000L);			//Der Punktestand des aktuellen Spielers wird um 8000000 erhoet.
 						}
 
 						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.ROT)			//Wenn die Hintergrundfarbe des jeweiligen Bausteins "rot" betraegt, wird folgendes ausgefuehrt.
 						{
-							Spieler.setPunktestand(Spieler.getPunktestand() + 10000000);			//Der Punktestand des aktuellen Spielers wird um 10000000 erhoet.
+							Spieler.setPunktestand(Spieler.getPunktestand() + 10000000000L);		//Der Punktestand des aktuellen Spielers wird um 10000000 erhoet.
 						}
 
 						yRichtung = yRichtung * -1;													//Die Richtung des Balls bezgl. der Y-Richtung wird geaendern.
