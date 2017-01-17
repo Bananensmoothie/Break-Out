@@ -83,7 +83,7 @@ public class Tabelle
 	 */
 	private void fillTabelle(ArrayList<String> spielerNamen, ArrayList<Double> punkte)
 	{
-		boolean punkteWurdenSchonAngezeigt = true;
+		boolean punkteWurdenNochNichtAngezeigt = true;
 		Color schriftFarbe = Highscorefenster.WEISSE_SCHRIFT;
 
 		if (tabellenEintraege == null)
