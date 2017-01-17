@@ -94,10 +94,10 @@ public class Tabelle
 			switch (iZeile)
 			{
 				case 1:
-					if ((punkte.get(0) == erzielterPunktestand) && punkteWurdenSchonAngezeigt)
+					if ((punkte.get(0) == erzielterPunktestand) && punkteWurdenNochNichtAngezeigt)
 					{
 						schriftFarbe = Color.RED;
-						punkteWurdenSchonAngezeigt = false;
+						punkteWurdenNochNichtAngezeigt = false;
 					}
 					Highscorefenster.getLblPlatz1().setText(spielerNamen.get(0));
 					Highscorefenster.getLblPlatz1().setForeground(schriftFarbe);
@@ -107,10 +107,10 @@ public class Tabelle
 					break;
 
 				case 2:
-					if ((punkte.get(1) == erzielterPunktestand) && punkteWurdenSchonAngezeigt)
+					if ((punkte.get(1) == erzielterPunktestand) && punkteWurdenNochNichtAngezeigt)
 					{
 						schriftFarbe = Color.RED;
-						punkteWurdenSchonAngezeigt = false;
+						punkteWurdenNochNichtAngezeigt = false;
 					}
 					Highscorefenster.getLblPlatz2().setText(spielerNamen.get(1));
 					Highscorefenster.getLblPlatz2().setForeground(schriftFarbe);
@@ -120,10 +120,10 @@ public class Tabelle
 					break;
 
 				case 3:
-					if ((punkte.get(2) == erzielterPunktestand) && punkteWurdenSchonAngezeigt)
+					if ((punkte.get(2) == erzielterPunktestand) && punkteWurdenNochNichtAngezeigt)
 					{
 						schriftFarbe = Color.RED;
-						punkteWurdenSchonAngezeigt = false;
+						punkteWurdenNochNichtAngezeigt = false;
 					}
 					Highscorefenster.getLblPlatz3().setText(spielerNamen.get(2));
 					Highscorefenster.getLblPlatz3().setForeground(schriftFarbe);
@@ -133,10 +133,10 @@ public class Tabelle
 					break;
 
 				case 4:
-					if ((punkte.get(3) == erzielterPunktestand) && punkteWurdenSchonAngezeigt)
+					if ((punkte.get(3) == erzielterPunktestand) && punkteWurdenNochNichtAngezeigt)
 					{
 						schriftFarbe = Color.RED;
-						punkteWurdenSchonAngezeigt = false;
+						punkteWurdenNochNichtAngezeigt = false;
 					}
 					Highscorefenster.getLblPlatz4().setText(spielerNamen.get(3));
 					Highscorefenster.getLblPlatz4().setForeground(schriftFarbe);
@@ -146,10 +146,10 @@ public class Tabelle
 					break;
 
 				case 5:
-					if ((punkte.get(4) == erzielterPunktestand) && punkteWurdenSchonAngezeigt)
+					if ((punkte.get(4) == erzielterPunktestand) && punkteWurdenNochNichtAngezeigt)
 					{
 						schriftFarbe = Color.RED;
-						punkteWurdenSchonAngezeigt = false;
+						punkteWurdenNochNichtAngezeigt = false;
 					}
 					Highscorefenster.getLblPlatz5().setText(spielerNamen.get(4));
 					Highscorefenster.getLblPlatz5().setForeground(schriftFarbe);
@@ -159,10 +159,10 @@ public class Tabelle
 					break;
 
 				case 6:
-					if ((punkte.get(5) == erzielterPunktestand) && punkteWurdenSchonAngezeigt)
+					if ((punkte.get(5) == erzielterPunktestand) && punkteWurdenNochNichtAngezeigt)
 					{
 						schriftFarbe = Color.RED;
-						punkteWurdenSchonAngezeigt = false;
+						punkteWurdenNochNichtAngezeigt = false;
 					}
 					Highscorefenster.getLblPlatz6().setText(spielerNamen.get(5));
 					Highscorefenster.getLblPlatz6().setForeground(schriftFarbe);
@@ -172,10 +172,10 @@ public class Tabelle
 					break;
 
 				case 7:
-					if ((punkte.get(6) == erzielterPunktestand) && punkteWurdenSchonAngezeigt)
+					if ((punkte.get(6) == erzielterPunktestand) && punkteWurdenNochNichtAngezeigt)
 					{
 						schriftFarbe = Color.RED;
-						punkteWurdenSchonAngezeigt = false;
+						punkteWurdenNochNichtAngezeigt = false;
 					}
 					Highscorefenster.getLblPlatz7().setText(spielerNamen.get(6));
 					Highscorefenster.getLblPlatz7().setForeground(schriftFarbe);
@@ -185,10 +185,10 @@ public class Tabelle
 					break;
 
 				case 8:
-					if ((punkte.get(7) == erzielterPunktestand) && punkteWurdenSchonAngezeigt)
+					if ((punkte.get(7) == erzielterPunktestand) && punkteWurdenNochNichtAngezeigt)
 					{
 						schriftFarbe = Color.RED;
-						punkteWurdenSchonAngezeigt = false;
+						punkteWurdenNochNichtAngezeigt = false;
 					}
 					Highscorefenster.getLblPlatz8().setText(spielerNamen.get(7));
 					Highscorefenster.getLblPlatz8().setForeground(schriftFarbe);
@@ -198,10 +198,10 @@ public class Tabelle
 					break;
 
 				case 9:
-					if ((punkte.get(8) == erzielterPunktestand) && punkteWurdenSchonAngezeigt)
+					if ((punkte.get(8) == erzielterPunktestand) && punkteWurdenNochNichtAngezeigt)
 					{
 						schriftFarbe = Color.RED;
-						punkteWurdenSchonAngezeigt = false;
+						punkteWurdenNochNichtAngezeigt = false;
 					}
 					Highscorefenster.getLblPlatz9().setText(spielerNamen.get(8));
 					Highscorefenster.getLblPlatz9().setForeground(schriftFarbe);
@@ -211,10 +211,10 @@ public class Tabelle
 					break;
 
 				case 10:
-					if ((punkte.get(9) == erzielterPunktestand) && punkteWurdenSchonAngezeigt)
+					if ((punkte.get(9) == erzielterPunktestand) && punkteWurdenNochNichtAngezeigt)
 					{
 						schriftFarbe = Color.RED;
-						punkteWurdenSchonAngezeigt = false;
+						punkteWurdenNochNichtAngezeigt = false;
 					}
 					Highscorefenster.getLblPlatz10().setText(spielerNamen.get(9));
 					Highscorefenster.getLblPlatz10().setForeground(schriftFarbe);
@@ -224,10 +224,10 @@ public class Tabelle
 					break;
 
 				case 11:
-					if ((punkte.get(10) == erzielterPunktestand) && punkteWurdenSchonAngezeigt)
+					if ((punkte.get(10) == erzielterPunktestand) && punkteWurdenNochNichtAngezeigt)
 					{
 						schriftFarbe = Color.RED;
-						punkteWurdenSchonAngezeigt = false;
+						punkteWurdenNochNichtAngezeigt = false;
 					}
 					Highscorefenster.getLblPlatz11().setText(spielerNamen.get(10));
 					Highscorefenster.getLblPlatz11().setForeground(schriftFarbe);
@@ -237,10 +237,10 @@ public class Tabelle
 					break;
 
 				case 12:
-					if ((punkte.get(11) == erzielterPunktestand) && punkteWurdenSchonAngezeigt)
+					if ((punkte.get(11) == erzielterPunktestand) && punkteWurdenNochNichtAngezeigt)
 					{
 						schriftFarbe = Color.RED;
-						punkteWurdenSchonAngezeigt = false;
+						punkteWurdenNochNichtAngezeigt = false;
 					}
 					Highscorefenster.getLblPlatz12().setText(spielerNamen.get(11));
 					Highscorefenster.getLblPlatz12().setForeground(schriftFarbe);
@@ -250,10 +250,10 @@ public class Tabelle
 					break;
 
 				case 13:
-					if ((punkte.get(12) == erzielterPunktestand) && punkteWurdenSchonAngezeigt)
+					if ((punkte.get(12) == erzielterPunktestand) && punkteWurdenNochNichtAngezeigt)
 					{
 						schriftFarbe = Color.RED;
-						punkteWurdenSchonAngezeigt = false;
+						punkteWurdenNochNichtAngezeigt = false;
 					}
 					Highscorefenster.getLblPlatz13().setText(spielerNamen.get(12));
 					Highscorefenster.getLblPlatz13().setForeground(schriftFarbe);
@@ -263,10 +263,10 @@ public class Tabelle
 					break;
 
 				case 14:
-					if ((punkte.get(13) == erzielterPunktestand) && punkteWurdenSchonAngezeigt)
+					if ((punkte.get(13) == erzielterPunktestand) && punkteWurdenNochNichtAngezeigt)
 					{
 						schriftFarbe = Color.RED;
-						punkteWurdenSchonAngezeigt = false;
+						punkteWurdenNochNichtAngezeigt = false;
 					}
 					Highscorefenster.getLblPlatz14().setText(spielerNamen.get(13));
 					Highscorefenster.getLblPlatz14().setForeground(schriftFarbe);
