@@ -62,7 +62,7 @@ public class WindowListener extends WindowAdapter
 		
 		if (referenceFrame instanceof Highscorefenster)								//Wenn man das Spiel vom Highscorefenster aus schliessen will, wird folgendes ausgefuehrt.
 		{
-			Tabelle.getTabelle().ranglisteSpeichern();								//Die Rangliste wird gespiechert.
+			Tabelle.getTabelle().ranglisteSpeichern();								//Die Rangliste wird gespeichert.
 		}
 		
 		int optionPane = JOptionPane.showOptionDialog(parentComponent, warning, titel, optionType, messageType, null, optionen, optionen[0]);

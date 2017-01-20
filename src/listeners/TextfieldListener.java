@@ -33,9 +33,9 @@ public final class TextfieldListener extends KeyAdapter implements FocusListener
 	 */
 	private static String hinweisTextfieldText;
 	/**
-	 * Die Variable "<i><b>maxZeichenLaenge</b>wurde auf den Wert <b>20</b> gesetzt.<br>
+	 * Die Variable "<i><b>maxZeichenLaenge</b>wurde auf den Wert <b>22</b> gesetzt.<br>
 	 */
-	private int maxZeichenLaenge = 20;
+	private int maxZeichenLaenge = 22;
 	/**
 	 * Das JFrame "<i><b>referenceFrame</b>wurde erstellt.<br>
 	 */
