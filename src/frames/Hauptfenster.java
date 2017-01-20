@@ -23,6 +23,8 @@ import spieler.Spieler;
 
 public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarben, ISchriften
 {
+	private static final long serialVersionUID = 6077461681697162447L;
+	
 	private static final int GUI_SPALTEN = 10;
 	private static final int GUI_ZEILEN = 5;
 	

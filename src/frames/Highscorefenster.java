@@ -20,6 +20,8 @@ import verarbeiten.Tabelle;
 
 public class Highscorefenster extends JFrame implements IFensterEigenschaften, IFarben, ISchriften
 {
+	private static final long serialVersionUID = 2327949639563321162L;
+	
 	private JPanel cpHighsore;
 	private JPanel pHighsore;
 	private JPanel pHighsoreAusgabe;

@@ -1,6 +1,5 @@
 package frames;
 
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -23,6 +22,8 @@ import net.miginfocom.swing.MigLayout;
 
 public class Startfenster extends JFrame implements IFensterEigenschaften, IFarben, ISchriften
 {
+	private static final long serialVersionUID = 3180295092843422215L;
+	
 	private static JTextField txtSpielername;
 	private static JButton btnSpielStarten;
 	private static JButton btnHighscore;
@@ -41,27 +42,6 @@ public class Startfenster extends JFrame implements IFensterEigenschaften, IFarb
 	private JLabel lblInformationenZuBreakout;
 	private JLabel lblWillkommenBei;
 	private JLabel lblBreakOut;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args)
-	{
-		EventQueue.invokeLater(new Runnable()
-		{
-			public void run()
-			{
-				try
-				{
-					new Startfenster();
-				}
-				catch (Exception e)
-				{
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
