@@ -6,7 +6,7 @@ import verarbeiten.Tabelle;
 
 /**
  * In der<i>"<b>Spieler</b>" - Klasse </i> werden die <b>Leben</b>, der <b>Punktestand</b> und der <b>Spielername</b> <i>verwaltet</i><br>
- * und die <i>entsprechenden</i> <i>Massnahmen zur </i><b>Weiterverarbeitung</b> <i>ergriffen</i>.<br>
+ * und die <i>entsprechenden</i> <i>Massnahmen zur </i><b>Weiterverarbeitung</b> <i>ergriffen</i>.
  * 
  * @version 1.0
  * 
@@ -19,31 +19,42 @@ import verarbeiten.Tabelle;
 public final class Spieler
 {
 	/**
-	 * Die Variable "<i><b>leben</b></i>" wurde der <i>Wert</i> <b>3</b> zugewiessen.<br>
+	 * Die Variable "<i><b>leben</b></i>" wurde der <i>Wert</i> <b>3</b> zugewiessen.
 	 */
 	private static int leben = 3;
 	/**
-	 * Die Variable "<i><b>punktestand</b></i>" wurde der <i>Wert</i> <b>0</b> zugewiessen.<br>
+	 * Die Variable "<i><b>punktestand</b></i>" wurde der <i>Wert</i> <b>0</b> zugewiessen.
 	 */
 	private static double punktestand = 0;
 	/**
-	 * Die Variable "<i><b>spielername</b></i>" wurde erstellt.<br>
+	 * Die Variable "<i><b>spielername</b></i>" wurde erstellt.
 	 */
 	private static String spielername;
 
-	
+	/**
+	 * Die <i>Getter-Methode</i> für den <b>Spielername</b> gibt die Variable <i>spielername</i> zurück.<br>
+	 * 
+	 * @return <b>spielername</b> - Die Variable <i>spielername</i> <b>beinhaltet</b> den <b>vom Benutzer festgelegten Spielernamen</b>.
+	 */
 	public static String getSpielername()
 	{
 		return spielername;
 	}
 
+	/**
+	 * Die <i>Setter-Methode</i> für den <b>Spielername</b> setzt den <b>spielername</b> auf den vom Benutzer gewünschten Namen.
+	 * 
+	 * @param spielername Die Variable <i>spielername</i> <b>beinhaltet</b> den <b>vom Benutzer festgelegten Spielernamen</b>.
+	 */
 	public static void setSpielername(String spielername)
 	{
 		Spieler.spielername = spielername;
 	}
 	
 	/**
-	 * @return the leben
+	 * Die <i>Getter-Methode</i> für die <b>Leben des Spielers</b> gibt die Variable <i>leben</i> zurück.<br>
+	 * 
+	 * @return <b>leben</b> - Die Variable <i>leben</i> <b>beinhaltet</b> die <b>aktuelle Anzahl der Leben</b> des Spielers.
 	 */
 	public static int getLeben()
 	{
@@ -51,15 +62,9 @@ public final class Spieler
 	}
 	
 	/**
-	 * @return the punktestand
-	 */
-	public static double getPunktestand()
-	{
-		return punktestand;
-	}
-	
-	/**
-	 * @param leben the leben to set
+	 * Die <i>Setter-Methode</i> für die <b>Leben des Spielers</b> setzt die <b>leben</b> auf den gewünschten Wert.
+	 * 
+	 * @param leben Die Variable <i>leben</i> <b>beinhaltet</b> die <b>aktuelle Anzahl der Leben</b> des Spielers.
 	 */
 	public static void setLeben(int leben)
 	{
@@ -85,7 +90,19 @@ public final class Spieler
 	}
 	
 	/**
-	 * @param punktestand the punktestand to set
+	 * Die <i>Getter-Methode</i> für den <b>Punktestand des Spielers</b> gibt die Variable <i>punktestand</i> zurück.<br>
+	 * 
+	 * @return <b>punktestand</b> - Die Variable <i>punktestand</i> <b>beinhaltet</b> den <b>aktuellen Punktestand</b> des Spielers.
+	 */
+	public static double getPunktestand()
+	{
+		return punktestand;
+	}
+	
+	/**
+	 * Die <i>Setter-Methode</i> für den <b>Punktestand des Spielers</b> setzt den <b>punktestand</b> auf den gewünschten Wert.
+	 * 
+	 * @param punktestand Die Variable <i>punktestand</i> <b>beinhaltet</b> den <b>aktuellen Punktestand</b> des Spielers.
 	 */
 	public static void setPunktestand(double punktestand)
 	{

@@ -16,7 +16,7 @@ import verarbeiten.Tabelle;
  * Bei diesen <i>Knopfdruecken</i> handelt es sich heirbei um die Knoepfe "<b>Spiel starten</b>", "<b>Highscoretabelle</b>" <br>
  * im Startfenster und dem Knopf " <b>Startfenster</b>" in der Highscoretabelle.<br>
  * <br>
- * Dieser Listener <i>implementiert</i> das Interface "<b>ActionListener</b>".<br>
+ * Dieser Listener <i>implementiert</i> das Interface "<b>ActionListener</b>".
  * 
  * @version 1.0
  * 
@@ -50,14 +50,13 @@ public class ButtonListener implements ActionListener
 	private JFrame referenceFrame;
 	
 	/**
-	 * Die Methode "<i><b>ButtonListener</b></i>" <i>speichert</i> in welchem <b>Fenster</b><i> ein Knopf gedrueckt wurde</i> und <br>
+	 * Der Konstruktor "<i><b>ButtonListener</b></i>" <i>speichert</i> in welchem <b>Fenster</b><i> ein Knopf gedrueckt wurde</i> und <br>
 	 * was der <i>Benutzer des Programms damit </i><b>erreichen</b><i> will</i>.<br>
 	 * <br>
-	 * Diese Methode hat <i>zwei Parameter</i>.<br>
-	 * <br>
+	 * Dieser Konstruktor hat <i>zwei Parameter</i>.
 	 * 
-	 * @param taskOfButton
-	 * @param referenceFrame
+	 * @param referenceFrame Das <b>JFrame</b>, welches mit dem ButtonListener "ausgestattet" wird.
+	 * @param taskOfButton Die <b>Aufgabe</b>, für welche der Button zuständig ist.
 	 */
 	public ButtonListener(JFrame referenceFrame, int taskOfButton)
 	{
@@ -65,8 +64,13 @@ public class ButtonListener implements ActionListener
 		this.referenceFrame = referenceFrame;		//Das entsprechende Fenster wird in "referenceFrame" gespeichert.
 	}
 	
+	/**
+	 * In der Methode <b>actionPerformed</b> werden die entsprechenden <i>"Maßnahmen"</i> getroffen, <i>um mit dem Spiel fortzufahren</i>.
+	 * 
+	 * @param event Die Variable <i>event</i> ermittelt ob der entsprechende <b>Button getätigt</b> wurde.
+	 */
 	@Override
-	public void actionPerformed(ActionEvent e)
+	public void actionPerformed(ActionEvent event)
 	{
 		if (taskOfButton == START_GAME)				//Wenn die zu erfuellende Aufgabe das Spiel starten ist, so wird folgendes ausgefuehrt.
 		{

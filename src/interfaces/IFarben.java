@@ -3,8 +3,8 @@ package interfaces;
 import java.awt.Color;
 
 /**
- * Im Interface <i>"<b>IFarben</b>"</i> werden die "<i>Standart<b>werte</b></i>" fuer <br>
- * den <i>spaeteren Gebrauch</i> <b>getroffen und festgehalten</b>.<br>
+ * Im Interface <i>"<b>IFarben</b>"</i> werden die "<i><b>Standardwerte</b></i>" für <br>
+ * den <i>späteren Gebrauch</i> <b>getroffen und festgehalten</b>.
  * 
  * @version 1.0
  * 

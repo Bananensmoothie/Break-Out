@@ -12,7 +12,7 @@ import javax.swing.JPanel;
  * sobald man in diesem Fenster die Taste <i>ENTER</i> drückt.<br>
  * <br>
  * Der Ball <b>aendert</b> seine <b>Richtung</b>, wenn er auf eine der <i>bunten Bausteine</i>,<br> 
- * auf <i>eine Wand</i> (unterste Wand ist hierbei ausgenommen), oder auf das steuerbare <i>Benutzerpanel</i> trifft.<br>
+ * auf <i>eine Wand</i> (unterste Wand ist hierbei ausgenommen), oder auf das steuerbare <i>Benutzerpanel</i> trifft.
  * 
  * @version 1.0
  * 
@@ -28,30 +28,30 @@ public final class Ball
 	 * Die Variable <i><b>xRichtung</b></i> speichert den Wert <b>-1</b>.<br>
 	 * <i>xRichung</i> wird benötigt, um die <b>Richtung</b> des <b>Ball</b>es bezgl. der <b>X-Richtung</b> zu <b>aendern</b>.<br>
 	 * <br>
-	 * <b>BSP:</b> Kam der Ball <i>vor</i> einem <i>Aufprall von links</i>, so soll er <i>nach</i> dem <i>Aufprall nach rechts fliegen</i>.<br>
+	 * <b>BSP:</b> Kam der Ball <i>vor</i> einem <i>Aufprall von links</i>, so soll er <i>nach</i> dem <i>Aufprall nach rechts fliegen</i>.
 	 */
 	private static int xRichtung = -1;
 	/**
 	 * Die Variable <i><b>yRichtung</b></i> speichert den Wert <b>-1</b>.<br>
 	 * <i>yRichung</i> wird benötigt, um die <b>Richtung</b> des <b>Ball</b>es bezgl. der <b>Y-Richtung</b> zu <b>aendern</b>.<br>
 	 * <br>
-	 * <b>BSP:</b> Kam der Ball <i>vor</i> einem <i>Aufprall von unten</i>, so soll er <i>nach</i> dem <i>Aufprall nach oben fliegen</i>.<br>
+	 * <b>BSP:</b> Kam der Ball <i>vor</i> einem <i>Aufprall von unten</i>, so soll er <i>nach</i> dem <i>Aufprall nach oben fliegen</i>.
 	 */
 	private static int yRichtung = -1;
 	/**
 	 * Die Variable <i><b>iPositionX</b></i> speichert den Wert <b>0</b>.<br>
-	 * <i>iPositionX</i> gibt die <b>Position</b> (=Wert) des <b>Ball</b>es auf der <b>X-Koordinate</b> an.<br>
+	 * <i>iPositionX</i> gibt die <b>Position</b> (=Wert) des <b>Ball</b>es auf der <b>X-Koordinate</b> an.
 	 */
 	private static int iPositionX = 0;
 	/**
 	 * Die Variable <i><b>iPositionY</b></i> speichert den Wert <b>0</b>.<br>
-	 * <i>iPositionY</i> gibt die <b>Position</b> (=Wert) des <b>Ball</b>es auf der <b>Y-Koordinate</b> an.<br>
+	 * <i>iPositionY</i> gibt die <b>Position</b> (=Wert) des <b>Ball</b>es auf der <b>Y-Koordinate</b> an.
 	 */
 	private static int iPositionY = 0;
 	/**
 	 * Die Variable <i><b>aPanel</b></i> steht später für das "<b>2D-Array</b>,<br>
 	 * das die bunten <b>Bausteine</b> am <b>oberen Rand des Hauptfensters</b> beinhaltet</b>.<br>
-	 * Zunächst wird nur das Array <i>aPanel</i> <i>ohne Inhalt</i> erzeugt.<br>
+	 * Zunächst wird nur das Array <i>aPanel</i> <i>ohne Inhalt</i> erzeugt.
 	 */
 	private static JPanel[][] aPanel;
 
@@ -71,7 +71,7 @@ public final class Ball
 	}
 
 	/**
-	 * In der Methode "<i><b>bewegen</b></i>" sind die entsprechenden <i>Abfragen</i> für die reibungslose <b>Bewegung des Balls</b> zu finden.<br>
+	 * In der Methode "<i><b>bewegen</b></i>" sind die entsprechenden <i>Abfragen</i> für die reibungslose <b>Bewegung des Balls</b> zu finden.
 	 */
 	public static void bewegen()
 	{
@@ -91,15 +91,15 @@ public final class Ball
 		for (int iZeile = 0; iZeile < 5; iZeile++)													//Eine "for"-Schleife, die jede Zeile der Bausteine betrachtet wird erstellt. Diese laeft 5 (= 5 Zeilen) mal durch.
 		{
 			for (int iSpalte = 0; iSpalte < 10; iSpalte++)											//Eine "for"-Schleife, die jede Spalte der Bausteine betrachtet wird erstellt. Diese laeft 10 (= 10 Spalten)mal durch.
-				{
+			{
 				if ((iBallPosY >= aPanel[iZeile][iSpalte].getY()) 									//Die Abfrage, ob die Position des Balls auf der Y-Achse kleiner gleich der Position des jeweiligen Bausteins auf der Y-Achse ist,
-					&& (iBallPosY <= (aPanel[iZeile][iSpalte].getY() + 55))							//ob die Position des Balls auf der Y-Achse groesser gleich der Position des darauf folgenden Bausteins auf der Y-Achse ist und
-					&& aPanel[iZeile][iSpalte].isVisible())											//ob der jeweilige Baustein für den Bunuetzer des Programms sichtbar ist, wurde hier erstellt.
+				 && (iBallPosY <= (aPanel[iZeile][iSpalte].getY() + 55))							//ob die Position des Balls auf der Y-Achse groesser gleich der Position des darauf folgenden Bausteins auf der Y-Achse ist und
+				 && aPanel[iZeile][iSpalte].isVisible())											//ob der jeweilige Baustein für den Bunuetzer des Programms sichtbar ist, wurde hier erstellt.
 																									//Wenn dies der Fall ist, wird folgendes ausgefuehrt.
 				{
 					if ((iBallPosX >= aPanel[iZeile][iSpalte].getX()) 								//Die Abfrage, ob die Position des Balls auf der X-Achse kleiner gleich der Position des jeweiligen Bausteins auf der X-Achse ist,
-						&& (iBallPosX <= (aPanel[iZeile][iSpalte].getX() + 109))					//ob die Position des Balls auf der X-Achse gleiner gleich der Position des darauf folgenden Bausteins auf der X-Achse ist und
-						&& aPanel[iZeile][iSpalte].isVisible())										//ob der jeweilige Baustein für den Bunuetzer des Programms sichtbar ist, wurde hier erstellt.
+					 && (iBallPosX <= (aPanel[iZeile][iSpalte].getX() + 109))					//ob die Position des Balls auf der X-Achse gleiner gleich der Position des darauf folgenden Bausteins auf der X-Achse ist und
+					 && aPanel[iZeile][iSpalte].isVisible())										//ob der jeweilige Baustein für den Bunuetzer des Programms sichtbar ist, wurde hier erstellt.
 																									//Wenn dies der Fall ist, wird folgendes ausgefuehrt.
 					{
 						aPanel[iZeile][iSpalte].setVisible(false);									//Der entsprechende Baustein wird unsichtbar gemacht.
@@ -107,27 +107,27 @@ public final class Ball
 
 						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.HELL_BLAU)		//Wenn die Hintergrundfarbe des jeweiligen Bausteins "hellblau" betraegt, wird folgendes ausgefuehrt.
 						{
-							Spieler.setPunktestand(Spieler.getPunktestand() + 2000000000L);			//Der Punktestand des aktuellen Spielers wird um 2000000 erhoet.
+							Spieler.setPunktestand(Spieler.getPunktestand() + 2000000000L);			//Der Punktestand des aktuellen Spielers wird um 2.000.000.000 erhoet.
 						}
 
 						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.GRUEN)			//Wenn die Hintergrundfarbe des jeweiligen Bausteins "gruen" betraegt, wird folgendes ausgefuehrt.
 						{
-							Spieler.setPunktestand(Spieler.getPunktestand() + 4000000000L);			//Der Punktestand des aktuellen Spielers wird um 4000000 erhoet.
+							Spieler.setPunktestand(Spieler.getPunktestand() + 4000000000L);			//Der Punktestand des aktuellen Spielers wird um 4.000.000.000 erhoet.
 						}
 
 						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.GELB)			//Wenn die Hintergrundfarbe des jeweiligen Bausteins "gelb" betraegt, wird folgendes ausgefuehrt.
 						{
-							Spieler.setPunktestand(Spieler.getPunktestand() + 6000000000L);			//Der Punktestand des aktuellen Spielers wird um 6000000 erhoet.
+							Spieler.setPunktestand(Spieler.getPunktestand() + 6000000000L);			//Der Punktestand des aktuellen Spielers wird um 6.000.000.000 erhoet.
 						}
 
 						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.ORANGE)			//Wenn die Hintergrundfarbe des jeweiligen Bausteins "orange" betraegt, wird folgendes ausgefuehrt.
 						{
-							Spieler.setPunktestand(Spieler.getPunktestand() + 8000000000L);			//Der Punktestand des aktuellen Spielers wird um 8000000 erhoet.
+							Spieler.setPunktestand(Spieler.getPunktestand() + 8000000000L);			//Der Punktestand des aktuellen Spielers wird um 8.000.000.000 erhoet.
 						}
 
 						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.ROT)			//Wenn die Hintergrundfarbe des jeweiligen Bausteins "rot" betraegt, wird folgendes ausgefuehrt.
 						{
-							Spieler.setPunktestand(Spieler.getPunktestand() + 10000000000L);		//Der Punktestand des aktuellen Spielers wird um 10000000 erhoet.
+							Spieler.setPunktestand(Spieler.getPunktestand() + 10000000000L);		//Der Punktestand des aktuellen Spielers wird um 10.000.000.000 erhoet.
 						}
 
 						yRichtung = yRichtung * -1;													//Die Richtung des Balls bezgl. der Y-Richtung wird geaendern.
@@ -186,7 +186,7 @@ public final class Ball
 	}
 	
 	/**
-	 * In der Methode "<i><b>getBallX</b></i>"  wird der <i>aktuelle X-Wert</i> des <i>Ball</i>s am Hauptfenster zurueckgegeben.<br>
+	 * In der Methode "<i><b>getBallX</b></i>"  wird der <i>aktuelle X-Wert</i> des <i>Ball</i>s am Hauptfenster zurueckgegeben.
 	 * 
 	 * @return aktuelle X-Koordinate des Balls
 	 */
@@ -196,7 +196,7 @@ public final class Ball
 	}
 
 	/**
-	 * In der Methode "<i><b>getBallY</b></i>"  wird der <i>aktuelle Y-Wert</i> des <i>Ball</i>s am Hauptfenster zurueckgegeben.<br>
+	 * In der Methode "<i><b>getBallY</b></i>"  wird der <i>aktuelle Y-Wert</i> des <i>Ball</i>s am Hauptfenster zurueckgegeben.
 	 * 
 	 * @return aktuelle Y-Koordinate des Balls
 	 */

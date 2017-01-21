@@ -12,7 +12,7 @@ import schlaeger.Schlaeger;
  * die <b>rechte</b> oder die <b>linke Pfeiltaste</b> <i>gedruekt</i> wurde.<br>
  * Anschliessend werden die entsprechenden <i>Massnahmen ergriffen</i>.<br>
  * <br>
- * Dieser Listener <i>erbt</i> von der Klasse "<b>KeyAdapter</b>".<br>
+ * Dieser Listener <i>erbt</i> von der Klasse "<b>KeyAdapter</b>".
  * 
  * @version 1.0
  * 
@@ -20,10 +20,14 @@ import schlaeger.Schlaeger;
  * @author Manuel Glantschnig
  * @author Jonas Hörtnagl
  * @author Cristina Erhart
- * 
  */
 public class EnterHauptfenster extends KeyAdapter
 {
+	/**
+	 * Die <b>keyPressed-Methode</b> fängt alle <b>Tastendrücke</b> ab und <b>ergreift entsprechende Maßnahmen</b>.
+	 * 
+	 * @param event Die Variable "<b>event</b>" speichert die <b>bereits gedrückten Tastendrücke</b>.
+	 */
 	@Override
 	public void keyPressed(KeyEvent event)
 	{
