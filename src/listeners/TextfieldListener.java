@@ -29,19 +29,19 @@ import spieler.Spieler;
 public final class TextfieldListener extends KeyAdapter implements FocusListener
 {
 	/**
-	 * Die Variable "<i><b>hinweisTextfieldText</b>wurde erstellt.<br>
+	 * Die Variable "<i><b>hinweisTextfieldText</b></i> wurde erstellt.<br>
 	 */
 	private static String hinweisTextfieldText;
 	/**
-	 * Die Variable "<i><b>maxZeichenLaenge</b>wurde auf den Wert <b>22</b> gesetzt.<br>
+	 * Die Variable "<i><b>maxZeichenLaenge</b></i> wurde auf den Wert <b>22</b> gesetzt.<br>
 	 */
 	private int maxZeichenLaenge = 22;
 	/**
-	 * Das JFrame "<i><b>referenceFrame</b>wurde erstellt.<br>
+	 * Das JFrame "<i><b>referenceFrame</b></i> wurde erstellt.<br>
 	 */
 	private JFrame referenceFrame;
 	/**
-	 * Das JTextField "<i><b>referenceTextFrame</b>wurde erstellt.<br>
+	 * Das JTextField "<i><b>referenceTextFrame</b></i> wurde erstellt.<br>
 	 */
 	private JTextField referenceTextField;
 	

@@ -49,11 +49,11 @@ public final class Ball
 	 */
 	private static int iPositionY = 0;
 	/**
-	 * Die Variable <i><b>aPanel</b></i> steht später für das "<b>2D-Array</b>,<br>
-	 * das die bunten <b>Bausteine</b> am <b>oberen Rand des Hauptfensters</b> beinhaltet</b>.<br>
-	 * Zunächst wird nur das Array <i>aPanel</i> <i>ohne Inhalt</i> erzeugt.
+	 * Die Variable <i><b>aPanels</b></i> steht später für das "<b>2D-Array</b>,<br>
+	 * das die bunten <b>Bausteine</b> am <b>oberen Rand des Hauptfensters</b> beinhaltet.<br>
+	 * Zunächst wird nur das Array <i>aPanels</i> <i>ohne Inhalt</i> erzeugt.
 	 */
-	private static JPanel[][] aPanel;
+	private static JPanel[][] aPanels;
 
 	/**
 	 * Die Methode "<i><b>setStartPosition</b></i>" gibt dem <b>Ball</b> zu <b>Beginn des Spiels</b> seine "<b>Startposition</b>".<br>
@@ -85,47 +85,47 @@ public final class Ball
 		int iSchlaegerBreite = Schlaeger.getBreite();					//Die Variable "iSchlaegerBreite" speichert das Aufrufen der "getBreite"-Methode in der Klasse "Schlaeger".
 		int iSpielfeldBreite = Hauptfenster.getSpielfeldBreite();		//Die Variable "iSpielfeldBreite" speichert das Aufrufen der "getSpielfeldBreite"-Methode in der Klasse "Hauptfenster".
 		
-		aPanel = Hauptfenster.getAPanels();								//Die Variable "aPanels" speichert das Aufrufen der "getAPanels"-Methode in der Klasse "Hauptfenster".
+		aPanels = Hauptfenster.getPanels();								//Die Variable "aPanels" speichert das Aufrufen der "getAPanels"-Methode in der Klasse "Hauptfenster".
 
 		
 		for (int iZeile = 0; iZeile < 5; iZeile++)													//Eine "for"-Schleife, die jede Zeile der Bausteine betrachtet wird erstellt. Diese laeft 5 (= 5 Zeilen) mal durch.
 		{
 			for (int iSpalte = 0; iSpalte < 10; iSpalte++)											//Eine "for"-Schleife, die jede Spalte der Bausteine betrachtet wird erstellt. Diese laeft 10 (= 10 Spalten)mal durch.
 			{
-				if ((iBallPosY >= aPanel[iZeile][iSpalte].getY()) 									//Die Abfrage, ob die Position des Balls auf der Y-Achse kleiner gleich der Position des jeweiligen Bausteins auf der Y-Achse ist,
-				 && (iBallPosY <= (aPanel[iZeile][iSpalte].getY() + 55))							//ob die Position des Balls auf der Y-Achse groesser gleich der Position des darauf folgenden Bausteins auf der Y-Achse ist und
-				 && aPanel[iZeile][iSpalte].isVisible())											//ob der jeweilige Baustein für den Bunuetzer des Programms sichtbar ist, wurde hier erstellt.
+				if ((iBallPosY >= aPanels[iZeile][iSpalte].getY()) 									//Die Abfrage, ob die Position des Balls auf der Y-Achse kleiner gleich der Position des jeweiligen Bausteins auf der Y-Achse ist,
+				 && (iBallPosY <= (aPanels[iZeile][iSpalte].getY() + 55))							//ob die Position des Balls auf der Y-Achse groesser gleich der Position des darauf folgenden Bausteins auf der Y-Achse ist und
+				 && aPanels[iZeile][iSpalte].isVisible())											//ob der jeweilige Baustein für den Bunuetzer des Programms sichtbar ist, wurde hier erstellt.
 																									//Wenn dies der Fall ist, wird folgendes ausgefuehrt.
 				{
-					if ((iBallPosX >= aPanel[iZeile][iSpalte].getX()) 								//Die Abfrage, ob die Position des Balls auf der X-Achse kleiner gleich der Position des jeweiligen Bausteins auf der X-Achse ist,
-					 && (iBallPosX <= (aPanel[iZeile][iSpalte].getX() + 109))					//ob die Position des Balls auf der X-Achse gleiner gleich der Position des darauf folgenden Bausteins auf der X-Achse ist und
-					 && aPanel[iZeile][iSpalte].isVisible())										//ob der jeweilige Baustein für den Bunuetzer des Programms sichtbar ist, wurde hier erstellt.
+					if ((iBallPosX >= aPanels[iZeile][iSpalte].getX()) 								//Die Abfrage, ob die Position des Balls auf der X-Achse kleiner gleich der Position des jeweiligen Bausteins auf der X-Achse ist,
+					 && (iBallPosX <= (aPanels[iZeile][iSpalte].getX() + 109))					//ob die Position des Balls auf der X-Achse gleiner gleich der Position des darauf folgenden Bausteins auf der X-Achse ist und
+					 && aPanels[iZeile][iSpalte].isVisible())										//ob der jeweilige Baustein für den Bunuetzer des Programms sichtbar ist, wurde hier erstellt.
 																									//Wenn dies der Fall ist, wird folgendes ausgefuehrt.
 					{
-						aPanel[iZeile][iSpalte].setVisible(false);									//Der entsprechende Baustein wird unsichtbar gemacht.
-						Hauptfenster.getCpHauptfenster().repaint();									//Die Oberflaeche des Hauptfensters wird neu gezeichnet.
+						aPanels[iZeile][iSpalte].setVisible(false);									//Der entsprechende Baustein wird unsichtbar gemacht.
+						Hauptfenster.getCpSpielfeld().repaint();									//Die Oberflaeche des Hauptfensters wird neu gezeichnet.
 
-						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.HELL_BLAU)		//Wenn die Hintergrundfarbe des jeweiligen Bausteins "hellblau" betraegt, wird folgendes ausgefuehrt.
+						if (aPanels[iZeile][iSpalte].getBackground() == Hauptfenster.HELL_BLAU)		//Wenn die Hintergrundfarbe des jeweiligen Bausteins "hellblau" betraegt, wird folgendes ausgefuehrt.
 						{
 							Spieler.setPunktestand(Spieler.getPunktestand() + 2000000000L);			//Der Punktestand des aktuellen Spielers wird um 2.000.000.000 erhoet.
 						}
 
-						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.GRUEN)			//Wenn die Hintergrundfarbe des jeweiligen Bausteins "gruen" betraegt, wird folgendes ausgefuehrt.
+						if (aPanels[iZeile][iSpalte].getBackground() == Hauptfenster.GRUEN)			//Wenn die Hintergrundfarbe des jeweiligen Bausteins "gruen" betraegt, wird folgendes ausgefuehrt.
 						{
 							Spieler.setPunktestand(Spieler.getPunktestand() + 4000000000L);			//Der Punktestand des aktuellen Spielers wird um 4.000.000.000 erhoet.
 						}
 
-						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.GELB)			//Wenn die Hintergrundfarbe des jeweiligen Bausteins "gelb" betraegt, wird folgendes ausgefuehrt.
+						if (aPanels[iZeile][iSpalte].getBackground() == Hauptfenster.GELB)			//Wenn die Hintergrundfarbe des jeweiligen Bausteins "gelb" betraegt, wird folgendes ausgefuehrt.
 						{
 							Spieler.setPunktestand(Spieler.getPunktestand() + 6000000000L);			//Der Punktestand des aktuellen Spielers wird um 6.000.000.000 erhoet.
 						}
 
-						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.ORANGE)			//Wenn die Hintergrundfarbe des jeweiligen Bausteins "orange" betraegt, wird folgendes ausgefuehrt.
+						if (aPanels[iZeile][iSpalte].getBackground() == Hauptfenster.ORANGE)			//Wenn die Hintergrundfarbe des jeweiligen Bausteins "orange" betraegt, wird folgendes ausgefuehrt.
 						{
 							Spieler.setPunktestand(Spieler.getPunktestand() + 8000000000L);			//Der Punktestand des aktuellen Spielers wird um 8.000.000.000 erhoet.
 						}
 
-						if (aPanel[iZeile][iSpalte].getBackground() == Hauptfenster.ROT)			//Wenn die Hintergrundfarbe des jeweiligen Bausteins "rot" betraegt, wird folgendes ausgefuehrt.
+						if (aPanels[iZeile][iSpalte].getBackground() == Hauptfenster.ROT)			//Wenn die Hintergrundfarbe des jeweiligen Bausteins "rot" betraegt, wird folgendes ausgefuehrt.
 						{
 							Spieler.setPunktestand(Spieler.getPunktestand() + 10000000000L);		//Der Punktestand des aktuellen Spielers wird um 10.000.000.000 erhoet.
 						}

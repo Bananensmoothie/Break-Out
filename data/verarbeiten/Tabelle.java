@@ -8,8 +8,12 @@ import java.util.ArrayList;
 import frames.Highscorefenster;
 
 /**
- * @author Manuel Glantschnig
  * @version 1.0
+ * 
+ * @author Thomas Mader-Ofer
+ * @author Manuel Glantschnig
+ * @author Jonas Hörtnagl
+ * @author Cristina Erhart
  */
 public class Tabelle
 {
@@ -295,8 +299,8 @@ public class Tabelle
 
 	/**
 	 * 
-	 * @param name
-	 * @param punkte
+	 * @param name der einzutragende Spielername
+	 * @param punkte die erzielten Punkte
 	 */
 	public void aktuellenSpielerEintragen(String name, double punkte)
 	{
@@ -349,7 +353,7 @@ public class Tabelle
 
 	/**
 	 * 
-	 * @return
+	 * @return ein Objekt der Klasse "Tabelle"
 	 */
 	public static Tabelle getTabelle()
 	{

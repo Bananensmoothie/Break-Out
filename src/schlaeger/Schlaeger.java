@@ -11,7 +11,7 @@ import frames.Hauptfenster;
  * Er kann ihn allerdings nur in <b>X-Richtung</b> <i>verschieben</i>,<br>
  * in <b>Y-Richung</b> <i>nicht</i>.<br>
  * <br>
- * Der <i>Schlaeger</i> kann nur <b>innerhalb</b> des</i> <b>Spielfeldes gesteuert</b> <i>werden</i>,<br>
+ * Der <i>Schlaeger</i> kann nur <b>innerhalb</b> des <b>Spielfeldes gesteuert</b> <i>werden</i>,<br>
  * <b>ausserhalb</b> <i>des Spielfeldes </i><b>funktioniert</b><i> er </i><b>nicht</b>!
  * 
  * @version 1.0
@@ -82,7 +82,7 @@ public class Schlaeger
 	 * <br>
 	 * Diese <i>Methode</i> hat <b>einen Parameter</b>.
 	 * 
-	 * @param iRichtung
+	 * @param iRichtung Richtung, in welche sich der Schläger bewegen soll
 	 */
 	public static void move(int iRichtung)
 	{

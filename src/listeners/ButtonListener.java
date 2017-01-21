@@ -11,7 +11,7 @@ import frames.Startfenster;
 import verarbeiten.Tabelle;
 
 /**
- * Im <i>Listener</i> <i>"<b>ButtonListener</b>"</i> werden die "<b>Knopfdruecke</b></i>" des <i>Startfensters</i><br>
+ * Im <i>Listener</i> <i>"<b>ButtonListener</b>"</i> werden die "<b>Knopfdruecke</b>" des <i>Startfensters</i><br>
  * und des <i>Highscorefensters</i> verwaltet.<br>
  * Bei diesen <i>Knopfdruecken</i> handelt es sich heirbei um die Knoepfe "<b>Spiel starten</b>", "<b>Highscoretabelle</b>" <br>
  * im Startfenster und dem Knopf " <b>Startfenster</b>" in der Highscoretabelle.<br>

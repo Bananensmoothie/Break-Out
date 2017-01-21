@@ -28,7 +28,7 @@ import verarbeiten.Tabelle;
 public class WindowListener extends WindowAdapter
 {
 	/**
-	 * Das JFrame "<i><b>referenceFrame</b>wurde erstellt.<br>
+	 * Das JFrame "<i><b>referenceFrame</b></i> wurde erstellt.<br>
 	 */
 	private JFrame referenceFrame;
 	
