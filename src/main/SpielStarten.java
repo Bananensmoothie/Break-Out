@@ -27,13 +27,13 @@ public class SpielStarten
 		{
 			public void run()
 			{
-				try
+				try											//Folgendes wird versucht...
 				{
-					new Startfenster();	//ein neues Startfenster wird geöffnet
+					new Startfenster();						//Die Klasse Startfenster wird aufgerufen.
 				}
-				catch (Exception e)
+				catch (Exception e)							//Wenn dies nicht funktioniert, so wird folgendes ausgefuehrt.
 				{
-					e.printStackTrace();
+					e.printStackTrace();					//Eine Fehlermeldung wird ausgegeben.
 				}
 			}
 		});
