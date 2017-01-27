@@ -38,11 +38,6 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 	private static final int GUI_SPALTEN = 10; 	//Konstante für die Erzeugung der Panels und für die Anzahl der Panles pro Zeile
 	private static final int GUI_ZEILEN = 5;	//Konstante für die Erzeugung der Panels und für die Anzahl der Panles pro Spalte
 	
-	private JPanel pSpielstand;					//Auf diesem Panle wird der Spielstand geschrieben
-	private JPanel pBenutzerebene;				//dies ist der Schläger, von welchem der Ball abprallt
-	
-	private Timer oTimer = new Timer();			//dies ist das Obejekt der inneren Klasse Timer 
-	
 	private static boolean timerAktiv = false;	//diese boolean wird verwendet, um den Timer "Aktivieren"
 	
 	private static JPanel[][] aPanels = new JPanel[50][50];	//in dieses Array werden die Blöcke, hinzugefühgt
@@ -53,6 +48,11 @@ public class Hauptfenster extends JFrame implements IFensterEigenschaften, IFarb
 	private static JPanel pBall;				//auf dieses Panel wird das Label gesetzt
 	private static JPanel cpSpielfeld;		//dieses Label wird auf das Frame gesetzt
 	private static ImageIcon imBall = new ImageIcon(Hauptfenster.class.getResource("/images/Ball.png"));	//Dies ist das Bild des Balles
+	
+	private JPanel pSpielstand;					//Auf diesem Panle wird der Spielstand geschrieben
+	private JPanel pBenutzerebene;				//dies ist der Schläger, von welchem der Ball abprallt
+	
+	private Timer oTimer = new Timer();			//dies ist das Obejekt der inneren Klasse Timer 
 
 	/**
 	 * Create the frame.

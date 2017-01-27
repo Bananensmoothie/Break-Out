@@ -6,7 +6,7 @@ import spieler.Spieler;
 import javax.swing.JPanel;
 
 /**
- * In der<i>"<b>Ball</b>" - Klasse </i> werden die <b>Bewegungen</b> des, wie ein Baseball aussehender, <b>Ball</b> gesteuert.<br>
+ * In der<i>" <b>Ball</b>" - Klasse </i> werden die <b>Bewegungen</b> des, wie ein Baseball aussehender, <b>Ball</b> gesteuert.<br>
  * <br>
  * Dieser Ball fängt im <i> Hauptfenster</i> des Spiels <b>selbstständig</b> an sich zu <b>bewegen</b>,<br>
  * sobald man in diesem Fenster die Taste <i>ENTER</i> drückt.<br>
@@ -33,14 +33,14 @@ public final class Ball
 	private static int xRichtung = -1;
 	/**
 	 * Die Variable <i><b>yRichtung</b></i> speichert den Wert <b>-1</b>.<br>
-	 * <i>yRichung</i> wird benötigt, um die <b>Richtung</b> des <b>Ball</b>es bezgl. der <b>Y-Richtung</b> zu <b>aendern</b>.<br>
+	 * <i>yRichung</i> wird benötigt, um die <b>Richtung</b> des <b>Balles</b> bezgl. der <b>Y-Richtung</b> zu <b>aendern</b>.<br>
 	 * <br>
 	 * <b>BSP:</b> Kam der Ball <i>vor</i> einem <i>Aufprall von unten</i>, so soll er <i>nach</i> dem <i>Aufprall nach oben fliegen</i>.
 	 */
 	private static int yRichtung = -1;
 	/**
 	 * Die Variable <i><b>iPositionX</b></i> speichert den Wert <b>0</b>.<br>
-	 * <i>iPositionX</i> gibt die <b>Position</b> (=Wert) des <b>Ball</b>es auf der <b>X-Koordinate</b> an.
+	 * <i>iPositionX</i> gibt die <b>Position</b> (=Wert) des <b>Balles</b> auf der <b>X-Koordinate</b> an.
 	 */
 	private static int iPositionX = 0;
 	/**
@@ -49,7 +49,7 @@ public final class Ball
 	 */
 	private static int iPositionY = 0;
 	/**
-	 * Die Variable <i><b>aPanels</b></i> steht später für das "<b>2D-Array</b>,<br>
+	 * Die Variable <i><b>aPanels</b></i> steht später für das "<b>2D-Array</b>",<br>
 	 * das die bunten <b>Bausteine</b> am <b>oberen Rand des Hauptfensters</b> beinhaltet.<br>
 	 * Zunächst wird nur das Array <i>aPanels</i> <i>ohne Inhalt</i> erzeugt.
 	 */
